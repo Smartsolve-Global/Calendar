@@ -1,0 +1,3313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1b2e5e">
+<title>Project Verifiabel</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlZlcmlmaWFiZWwgUHJvamVjdCBDb21tYW5kIiwgInNob3J0X25hbWUiOiAiVmVyaWZpYWJlbCIsICJkZXNjcmlwdGlvbiI6ICJQcm9qZWN0IG1hbmFnZW1lbnQgYnkgU21hcnQgU29sdmUgR2xvYmFsIiwgInN0YXJ0X3VybCI6ICJodHRwczovL3NtYXJ0c29sdmUtZ2xvYmFsLmdpdGh1Yi5pby9DYWxlbmRhci8iLCAic2NvcGUiOiAiaHR0cHM6Ly9zbWFydHNvbHZlLWdsb2JhbC5naXRodWIuaW8vQ2FsZW5kYXIvIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJvcmllbnRhdGlvbiI6ICJhbnkiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMWIyZTVlIiwgInRoZW1lX2NvbG9yIjogIiMxYjJlNWUiLCAiaWNvbnMiOiBbeyJzcmMiOiAiaHR0cHM6Ly9zbWFydHNvbHZlLWdsb2JhbC5naXRodWIuaW8vQ2FsZW5kYXIvaWNvbi0xOTIucG5nIiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifSwgeyJzcmMiOiAiaHR0cHM6Ly9zbWFydHNvbHZlLWdsb2JhbC5naXRodWIuaW8vQ2FsZW5kYXIvaWNvbi01MTIucG5nIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAhTElEQVR4nO2cd3xcxbXHz5mZe3dXcpFly8YN23KTe8M27gaDMcUmBQiQ0ENCCgnphZSXQnuplJDASyCQBBJCCdW0gG25ybgXuSBXGcm2rGpJe8vMnPfH3Sut5JUtGwPmfub7+ezH8u69c2fO/d2Zc86cXew9+loCgyEisI+6AwbDqcQI2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApjKANkcII2hApxEfdgZOAMryHH3ovTgyCjP1GTL19uvf/Y8PHStCIoIk+lqsKQkbRZno2De+Hj42gEZGIKBAzkQJMEwiBBsTTdywk60nrI0DAmnpNCAyJAeOdCHkMAnWbmfp9cvqKIA2GqDQRH9i/x47f/uxGgQhMa41aabJsC7ds213xgzueHAeIjOg0WsKRSSAt1LAJa+rPv3QaHmkUJAKTM6kBs21KbFy6khcumgIMCTSdHv3+GHPaCxoRCREhERP1f7j7FmvksPwBrY/59YP/OUAAnCMqRcQ/in5mJOUi+3n9yK+truuw8KliEIKACFArdEdPtRu79M3vCACg6ePoSp12nPZG5IwppTX/ybeu2DRyWP4Az/N9KSW5rucDADz6xMJli1cUTw6P+6j7mxEkYPv3HWKyQTkXXtUjedHVPWReTxXfs9VB0h917yLFaT1Dc8aUVEpcOu+swmuumDvD86W0LGERgWaM8/KDh2t//eDzgxhDrUmftss1AgAiY27Xnjw5ZtQQDQB6/16P791aCYCn/aTyceK0NSZDVEpr3q937ra7br9hktJaMQQO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LVuPQ6dNl0RE9Q3Jxtq6huywldb27dghS7U1biG4Jzg/6hqtOUFTt5sTyg0SAROcydojTo/H//XGkm986bKZSpNkrHmW1pr0BeeeNWH44F4bt5aUj8o0SyOCJiCMx0Tt7395cw/LskgpzUL3JXUMkla8trZaEinX95QGhLR1Chkis45lvKrqI9mu67dYzmdNGxNvap+CZfjg4QYZjC+YNrQmSOtKmzQ0JLXnydgxD2Io0fP6ksjaQ/36d4u99GicPfa/haAVV7ndEcaczWD5EgSGGqhFYIhXXDpTYSoxzDlHRMS/PV3YqexQ3Z6J40f0JwDtS0l53bp0nj11xJIX31iX11bswljwvHTrkn2kW272XksIHbMtf8G8SeXnzBg/SylFjDFCRFy1dse2hqScAAAtUpQh9Q1Jdtxxt+LD2tE98WQ9aYaI9I9nFp/5+WsudDpkZ8VCnxYAQCpJtmXBLdddIL/2o0eR8OjonTOupVLi59+9qnjIoH5T0v3mNDAWi8GTD/2gj+N6lQAASukm/7mhoUHf8t2H/Oo696j6aERArQkumD1mf/mhmnLBOQhLwLSJw8RnLz9/ilKKBOdME+lkMkkr1+zomWofAaCFmMNxpfvXnCEnIph33uQhvXrmreOMoWqeBokzhi++XnTkzaXbZoBWQg0escSde8FM69UXVqgz813q0UdYu0qYmz+kb3zFokOASNC8NJPSmnfsEDt0/uxxowGa3D2+bceesl37KobyZVvwh7f5JLhgUkkCALh8wYyuL76xDtoKyBGBERHce8cXp0gpARAoK5HglmUNCX1chowdqqiqvf8vL8VC/zccPxE1jfsL18ztfdGcceswdZDWGrQmsiwLH/nHwsbla3ZN44ypMI7KNBufFjM0QLABwRlTByrq+j/zwuKV11990dm+VE2+ryUE15r0xRdMHXPfn1/ZunPvoYL0WTpM0V08Z9zSqy87b3rrFF06iAiDB/XPzfSZUgosgVvTj00/lTEGd/74C7Nbn0dExBhD31eubYvYP59bvHRfWdX01GftskG4khQMye9aMCS/a6Zjyg9WLn9z6TZkDLXat7179gN3LGU1FV0QOUBVxRFyva78wIH9csR4tFc0z9ChK3butJHbunXtMjPd13/uleXvAmCvkj0HBq7buH33pAkj81Gj0pr0lEkjCgb07bp1d2nlMGSg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">
+<meta name="apple-mobile-web-app-title" content="Verifiabel">
+<meta name="application-name" content="Verifiabel">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/api.js" async defer></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #eef1f6;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f7f9fc;
+    --border: #d4dae6;
+    --border-light: #b8c2d4;
+    --text: #111827;
+    --text-muted: #4b5675;
+    --text-dim: #9aa3b8;
+    --navy: #1b2e5e;
+    --navy-mid: #2d4a8a;
+    --accent: #2563eb;
+    --accent-dim: #1d4ed8;
+    --accent-bg: rgba(37,99,235,0.07);
+    --accent-bg2: rgba(37,99,235,0.13);
+    --info: #1d4ed8;
+    --info-bg: rgba(29,78,216,0.08);
+    --success: #15803d;
+    --success-bg: rgba(21,128,61,0.09);
+    --danger: #b91c1c;
+    --danger-bg: rgba(185,28,28,0.08);
+    --warning: #b45309;
+    --warning-bg: rgba(180,83,9,0.09);
+    --font-head: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 8px rgba(27,46,94,0.10);
+    --shadow-md: 0 4px 20px rgba(27,46,94,0.14);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .app-header {
+    background: var(--navy);
+    border-bottom: none;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(27,46,94,0.18);
+  }
+  .app-logo {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .app-logo span { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 13px; margin-left: 10px; text-transform: none; letter-spacing: 0; }
+
+  /* TABS */
+  .tabs-bar {
+    background: var(--navy-mid);
+    border-bottom: none;
+    padding: 0 28px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .tabs-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 13px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.9); }
+  .tab-btn.active { color: #ffffff; border-bottom-color: #60a5fa; background: rgba(255,255,255,0.08); }
+
+  /* MAIN CONTENT */
+  .main { padding: 28px; }
+
+  /* BOARD HEADER */
+  .board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .board-title {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .board-count {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 10px;
+  }
+
+  /* BUTTON STYLES */
+  .btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .btn:hover { background: var(--card-hover); border-color: var(--accent); color: var(--accent); }
+  .btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--accent-dim); color: #fff; border-color: var(--accent-dim); }
+  /* header buttons */
+  .app-header .btn {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 12px;
+  }
+  .app-header .btn:hover { background: rgba(255,255,255,0.22); color: #fff; border-color: rgba(255,255,255,0.4); }
+  .app-header .btn-primary { background: #2563eb; border-color: #2563eb; }
+  .app-header .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+  .btn-sm { padding: 6px 12px; font-size: 12px; }
+  .btn-ghost { background: none; border-color: transparent; color: var(--text-muted); }
+  .btn-ghost:hover { background: var(--card); color: var(--navy); border-color: var(--border); }
+  .btn-danger { border-color: var(--danger); color: var(--danger); background: none; }
+  .btn-danger:hover { background: var(--danger-bg); }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+  }
+
+  /* PROJECT CARD */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 16px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  .project-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .card-priority-bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-left: 10px;
+  }
+  .card-name {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+    flex: 1;
+  }
+  .star-display { display: flex; gap: 2px; flex-shrink: 0; }
+  .star-display .star { color: #f59e0b; font-size: 12px; }
+  .star-display .star.empty { color: #d1d5db; }
+
+  .card-meta {
+    margin: 10px 0 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+  .badge-note { background: #dbeafe; color: #1e40af; }
+  .badge-todo { background: #fef3c7; color: #92400e; }
+  .badge-attach { background: #ede9fe; color: #5b21b6; }
+  .badge-overdue { background: #fee2e2; color: #991b1b; }
+
+  .card-latest-note {
+    margin: 10px 0 0 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    border-left: 3px solid var(--border);
+    padding-left: 8px;
+  }
+  .card-add-btn {
+    margin: 12px 0 0 10px;
+    display: block;
+    width: calc(100% - 10px);
+    padding: 7px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: none;
+    border: 1px dashed var(--border-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .card-add-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+  /* ADD CARD TILE */
+  .add-card-tile {
+    background: none;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s;
+    min-height: 90px;
+  }
+  .add-card-tile:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+  /* MODAL OVERLAY */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17,24,39,0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(3px);
+  }
+  .modal-overlay.hidden { display: none; }
+
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0 20px 60px rgba(27,46,94,0.22);
+    animation: modalIn 0.18s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(-12px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .modal-header {
+    padding: 20px 24px 16px;
+    border-bottom: 2px solid var(--bg);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    border-radius: 14px 14px 0 0;
+  }
+  .modal-title-wrap { flex: 1; }
+  .modal-title {
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    outline: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.15s;
+  }
+  .modal-title:focus { border-bottom-color: var(--accent); }
+  .modal-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 3px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .modal-body { padding: 22px 24px; }
+  .modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    background: #f8fafc;
+    border-radius: 0 0 14px 14px;
+  }
+
+  /* PRIORITY PICKER */
+  .priority-picker { display: flex; gap: 4px; align-items: center; }
+  .priority-star {
+    font-size: 22px;
+    cursor: pointer;
+    color: #d1d5db;
+    transition: color 0.1s, transform 0.1s;
+    line-height: 1;
+    user-select: none;
+  }
+  .priority-star.filled { color: #f59e0b; }
+  .priority-star:hover { color: #f59e0b; transform: scale(1.15); }
+  .priority-label { font-size: 12px; color: var(--text-muted); margin-left: 8px; font-weight: 600; }
+
+  /* NOTES SECTION */
+  .notes-section { margin-top: 20px; }
+  .section-label {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+
+  .note-compose {
+    background: #f8fafc;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .note-compose:focus-within { border-color: var(--accent); background: #fff; }
+  .note-compose textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    min-height: 70px;
+    line-height: 1.6;
+  }
+  .note-compose textarea::placeholder { color: var(--text-dim); }
+
+  .compose-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    flex-wrap: wrap;
+  }
+  .compose-spacer { flex: 1; }
+  .todo-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    user-select: none;
+  }
+  .todo-toggle input[type="checkbox"] { accent-color: var(--accent); cursor: pointer; }
+  .todo-date-input {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 12px;
+    padding: 5px 8px;
+    outline: none;
+  }
+  .todo-date-input:focus { border-color: var(--accent); }
+
+  /* NOTES LIST */
+  .notes-list { display: flex; flex-direction: column; gap: 10px; }
+  .note-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    position: relative;
+  }
+  .note-item:hover { border-color: var(--border-light); }
+  .note-item.is-todo { border-left: 4px solid #f59e0b; }
+  .note-item.todo-done { opacity: 0.5; background: #f9fafb; }
+
+  .note-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .note-ts { font-size: 11px; color: var(--text-dim); font-weight: 500; }
+  .note-actions { display: flex; gap: 4px; opacity: 0; transition: opacity 0.15s; }
+  .note-item:hover .note-actions { opacity: 1; }
+  .icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.1s;
+  }
+  .icon-btn:hover { background: var(--bg); color: var(--text); }
+  .icon-btn.danger:hover { color: var(--danger); background: var(--danger-bg); }
+
+  .note-body { font-size: 13px; color: var(--text); line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
+  .note-todo-info {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    background: #fffbeb;
+    border-radius: var(--radius-sm);
+    padding: 5px 8px;
+  }
+  .todo-check { cursor: pointer; accent-color: var(--accent); }
+  .todo-due { color: var(--warning); font-weight: 600; }
+  .todo-due.overdue { color: var(--danger); }
+
+  .note-attachments {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .attach-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #ede9fe;
+    border: 1px solid #c4b5fd;
+    border-radius: var(--radius-sm);
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #5b21b6;
+    cursor: pointer;
+    transition: background 0.1s;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .attach-chip:hover { background: #ddd6fe; }
+  .attach-icon { font-size: 12px; flex-shrink: 0; }
+  .attach-remove {
+    background: none;
+    border: none;
+    color: #7c3aed;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 2px;
+    flex-shrink: 0;
+  }
+  .attach-remove:hover { color: var(--danger); }
+
+  /* TODO LIST TAB */
+  .todo-list-container { max-width: 800px; }
+  .todo-list-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: all 0.15s;
+    box-shadow: var(--shadow);
+  }
+  .todo-list-item:hover { border-color: var(--border-light); box-shadow: var(--shadow-md); }
+  .todo-list-item.done { opacity: 0.5; background: #f9fafb; }
+  .todo-list-item.overdue { border-left: 4px solid var(--danger); }
+  .todo-list-item.upcoming { border-left: 4px solid #f59e0b; }
+  .todo-check-lg { cursor: pointer; accent-color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; }
+
+  .todo-content { flex: 1; }
+  .todo-project-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--navy-mid);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .todo-text { font-size: 14px; color: var(--text); font-weight: 500; }
+  .todo-due-display { font-size: 12px; margin-top: 4px; font-weight: 600; }
+  .todo-due-display.overdue { color: var(--danger); }
+  .todo-due-display.upcoming { color: var(--warning); }
+  .todo-due-display.future { color: var(--text-muted); }
+
+  /* FORM ELEMENTS */
+  .form-group { margin-bottom: 16px; }
+  .form-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; display: block; letter-spacing: 0.03em; text-transform: uppercase; }
+  .form-input, .form-select {
+    width: 100%;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-input:focus, .form-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+  .form-select option { background: #fff; color: var(--text); }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-dim);
+  }
+  .empty-state .icon { font-size: 36px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; color: var(--text-muted); }
+
+  /* CONFIRM DIALOG */
+  .confirm-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 380px;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  .confirm-box h3 { font-family: var(--font-head); font-size: 17px; margin-bottom: 8px; color: var(--navy); font-weight: 700; }
+  .confirm-box p { font-size: 13px; color: var(--text-muted); margin-bottom: 22px; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 10px; }
+
+  .file-input-hidden { display: none; }
+
+  /* PRIORITY COLOR BARS */
+  .p1 { background: #d1d5db; }
+  .p2 { background: #34d399; }
+  .p3 { background: #f59e0b; }
+  .p4 { background: #f97316; }
+  .p5 { background: #ef4444; }
+
+  .hidden { display: none !important; }
+  .note-due-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--warning);
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--warning-bg);
+    background: var(--warning-bg);
+    transition: all 0.12s;
+  }
+  .note-due-badge:hover { border-color: var(--warning); }
+  .note-due-badge.overdue { color: var(--danger); background: var(--danger-bg); border-color: var(--danger-bg); }
+  .note-due-badge.overdue:hover { border-color: var(--danger); }
+
+  .note-date-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .note-date-picker.hidden { display: none !important; }
+  .note-date-picker .todo-date-input { font-size: 12px; padding: 4px 8px; }
+
+  .note-edit-area {
+    width: 100%;
+    background: #f8fafc;
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 8px 10px;
+    resize: none;
+    outline: none;
+    min-height: 60px;
+    line-height: 1.6;
+  }
+
+  .sort-info { font-size: 12px; color: var(--text-dim); margin-left: 8px; }
+
+  /* SEARCH */
+  .search-wrap {
+    flex: 1;
+    max-width: 380px;
+    margin: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-icon { position:absolute; left:10px; font-size:14px; pointer-events:none; }
+  .search-input {
+    width: 100%;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 7px 32px 7px 32px;
+    outline: none;
+    transition: all 0.15s;
+  }
+  .search-input::placeholder { color: rgba(255,255,255,0.45); }
+  .search-input:focus { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); }
+  .search-clear { position:absolute; right:10px; background:none; border:none; color:rgba(255,255,255,0.5); cursor:pointer; font-size:13px; }
+  .search-clear:hover { color:#fff; }
+
+  .search-result-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: var(--shadow);
+  }
+  .search-result-item:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .search-result-card { font-family: var(--font-head); font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+  .search-result-tab { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); margin-bottom:6px; }
+  .search-result-snippet { font-size:13px; color:var(--text-muted); line-height:1.5; }
+  .search-highlight { background:#fef9c3; color:#713f12; border-radius:2px; padding:0 2px; }
+
+  /* CLOSED TAB */
+  .closed-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .closed-col-header { font-family:var(--font-head); font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:8px 12px; border-radius:var(--radius-sm) var(--radius-sm) 0 0; margin-bottom:12px; }
+  .closed-won-header { background:#dcfce7; color:#15803d; }
+  .closed-lost-header { background:#fee2e2; color:#991b1b; }
+
+  /* AI PANEL */
+  .ai-panel {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 20px;
+    animation: modalIn 0.2s ease;
+  }
+  .ai-panel-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+  .ai-panel-title { font-family:var(--font-head); font-size:13px; font-weight:700; color:#5b21b6; }
+  .ai-section { margin-bottom:14px; }
+  .ai-section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#7c3aed; margin-bottom:5px; }
+  .ai-section-body { font-size:13px; color:#1e1b4b; line-height:1.65; white-space:pre-wrap; }
+  .ai-loading { display:flex; align-items:center; gap:10px; color:#7c3aed; font-size:13px; font-weight:500; }
+  .ai-spinner { width:18px; height:18px; border:2px solid #c4b5fd; border-top-color:#7c3aed; border-radius:50%; animation:spin 0.7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+
+  .gcal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid #1a73e8;
+    background: #e8f0fe;
+    color: #1a73e8;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .gcal-btn:hover { background: #1a73e8; color: #fff; }
+  .gcal-added {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+    white-space: nowrap;
+  }
+
+  /* GCAL MODAL */
+  .gcal-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: var(--shadow-md);
+    animation: modalIn 0.18s ease;
+    padding: 28px;
+  }
+  .gcal-modal h3 {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .gcal-modal p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+  .gcal-account-input {
+    width: 100%;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 9px 12px;
+    outline: none;
+    margin-bottom: 8px;
+    transition: border-color 0.15s;
+  }
+  .gcal-account-input:focus { border-color: #1a73e8; box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
+  .gcal-saved-accounts { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .gcal-account-chip {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e8f0fe;
+    color: #1a73e8;
+    border: 1px solid #c5d8fd;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .gcal-account-chip:hover { background: #1a73e8; color: #fff; }
+  .gcal-event-preview {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  .gcal-event-preview .ev-title { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .gcal-event-preview .ev-time { color: var(--text-muted); font-size: 12px; }
+
+  /* SEARCH */
+  .search-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+  }
+  .search-icon-btn {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .search-icon-btn:hover { background: rgba(255,255,255,0.22); }
+  .search-expanded {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 4px 8px 4px 14px;
+    width: 280px;
+    transition: all 0.2s;
+  }
+  .search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    min-width: 0;
+  }
+  .search-input::placeholder { color: rgba(255,255,255,0.5); }
+  .search-clear { background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:14px; padding:2px 4px; flex-shrink:0; }
+  .search-clear:hover { color:#fff; }
+  @media (max-width: 768px) {
+    .search-expanded { width: calc(100vw - 140px); }
+  }
+  .search-result-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: var(--shadow);
+  }
+  .search-result-item:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .search-result-card { font-family: var(--font-head); font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+  .search-result-tab { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); margin-bottom:6px; }
+  .search-result-snippet { font-size:13px; color:var(--text-muted); line-height:1.5; }
+  .search-highlight { background:#fef9c3; color:#713f12; border-radius:2px; padding:0 2px; }
+
+  /* CLOSED TAB */
+  .closed-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .closed-col-header { font-family:var(--font-head); font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:8px 12px; border-radius:var(--radius-sm) var(--radius-sm) 0 0; margin-bottom:12px; }
+  .closed-won-header { background:#dcfce7; color:#15803d; }
+  .closed-lost-header { background:#fee2e2; color:#991b1b; }
+
+  /* AI PANEL */
+  .ai-panel {
+    background: linear-gradient(135deg,#f5f3ff 0%,#ede9fe 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .ai-panel-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+  .ai-panel-title { font-family:var(--font-head); font-size:13px; font-weight:700; color:#5b21b6; }
+  .ai-section { margin-bottom:14px; }
+  .ai-section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#7c3aed; margin-bottom:5px; }
+  .ai-section-body { font-size:13px; color:#1e1b4b; line-height:1.65; white-space:pre-wrap; }
+  .ai-loading { display:flex; align-items:center; gap:10px; color:#7c3aed; font-size:13px; font-weight:500; }
+  .ai-spinner { width:18px; height:18px; border:2px solid #c4b5fd; border-top-color:#7c3aed; border-radius:50%; animation:spin 0.7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+
+  /* TODO PAD */
+  .todopad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    align-items: start;
+  }
+  .todopad-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .todopad-header {
+    background: var(--navy);
+    padding: 11px 14px 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .todopad-title {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+  .todopad-title[contenteditable=true]:focus { border-bottom: 1px solid rgba(255,255,255,0.45); }
+  .todopad-count { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 3px; font-weight: 500; }
+  .todopad-delete-card-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all 0.1s;
+    margin-top: 1px;
+  }
+  .todopad-delete-card-btn:hover { color: #fca5a5; background: rgba(255,255,255,0.1); }
+  .todopad-items {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 460px;
+    overflow-y: auto;
+    min-height: 60px;
+  }
+  .todopad-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 7px 8px;
+    border-radius: var(--radius-sm);
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    transition: border-color 0.12s;
+  }
+  .todopad-item:hover { border-color: var(--border-light); }
+  .todopad-item.done { opacity: 0.45; }
+  .todopad-check { cursor: pointer; accent-color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .todopad-item-text { font-size: 12px; color: var(--text); line-height: 1.5; word-break: break-word; }
+  .todopad-item-text.line-through { text-decoration: line-through; }
+  .todopad-due { display: block; font-size: 10px; font-weight: 600; color: var(--warning); margin-top: 2px; }
+  .todopad-due.overdue { color: var(--danger); }
+  .todopad-del-item {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 11px;
+    padding: 1px 3px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: all 0.1s;
+    line-height: 1;
+  }
+  .todopad-del-item:hover { color: var(--danger); background: var(--danger-bg); }
+  .todopad-add-today-btn {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    background: var(--accent-bg);
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.12s;
+    white-space: nowrap;
+  }
+  .todopad-add-today-btn:hover { background: var(--accent); color: #fff; }
+
+  .todopad-add-row {
+    padding: 10px;
+    border-top: 1px solid var(--border);
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .todopad-input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 12px;
+    padding: 6px 9px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .todopad-input:focus { border-color: var(--accent); }
+  .todopad-add-row .todo-date-input { width: 100%; font-size: 11px; padding: 5px 7px; }
+
+  /* ── MOBILE APP VIEW ─────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    body { font-size: 13px; }
+
+    /* Fixed bottom nav replaces tabs bar */
+    .tabs-bar { display: none; }
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      z-index: 200;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-nav-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 10px 4px 8px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: color 0.15s;
+      text-transform: uppercase;
+    }
+    .mobile-nav-btn.active { color: #60a5fa; }
+    .mobile-nav-btn .nav-icon { font-size: 18px; line-height: 1; }
+
+    /* Header — compact */
+    .app-header {
+      height: 52px;
+      padding: 0 14px;
+    }
+    .app-logo { font-size: 14px; }
+    .app-logo span { display: none; }
+    .search-wrap { max-width: none; margin: 0 10px; flex: 1; }
+    .search-input { font-size: 12px; padding: 6px 28px 6px 28px; }
+    .app-header .btn-primary { padding: 6px 10px; font-size: 11px; }
+    .app-header .btn:not(.btn-primary):not(label) { display: none; }
+
+    /* Main content — add bottom padding for nav */
+    .main { padding: 14px 12px 80px; }
+
+    /* Cards grid — single column on mobile */
+    .cards-grid { grid-template-columns: 1fr; gap: 10px; }
+
+    /* Card tiles — more compact */
+    .project-card { padding: 12px 12px 10px; }
+    .card-name { font-size: 14px; }
+
+    /* Modal — full screen on mobile */
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal {
+      border-radius: 18px 18px 0 0;
+      max-width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+    .modal-header { padding: 16px 18px 12px; }
+    .modal-title { font-size: 17px; }
+    .modal-body { padding: 16px 18px; }
+    .modal-footer { padding: 12px 18px; }
+
+    /* Drag handle indicator on modals */
+    .modal::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 4px;
+      background: var(--border-light);
+      border-radius: 2px;
+      margin: 10px auto -4px;
+    }
+
+    /* Board header */
+    .board-header { margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+    .board-title { font-size: 17px; }
+    .sort-info { display: none; }
+
+    /* Todopad — single column on mobile */
+    .todopad-grid { grid-template-columns: 1fr; }
+
+    /* Closed grid — stack on mobile */
+    .closed-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Todo list container */
+    .todo-list-container { max-width: 100%; }
+
+    /* Search results */
+    .search-result-item { padding: 12px 14px; }
+
+    /* Compose actions wrap */
+    .compose-actions { gap: 6px; }
+
+    /* Priority picker bigger tap targets */
+    .priority-star { font-size: 26px; }
+
+    /* Form elements bigger on mobile */
+    .form-input, .form-select { font-size: 16px; padding: 10px 12px; }
+
+    /* AI button label */
+    #aiBtn span { display: none; }
+  }
+
+  /* Desktop — hide mobile nav */
+  @media (min-width: 769px) {
+    .mobile-nav { display: none; }
+  }
+
+
+  .note-author-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border-radius: 10px;
+    padding: 1px 7px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* AUTH SCREEN */
+  .auth-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .auth-screen.hidden { display: none; }
+  .auth-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .auth-logo {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+  .auth-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .auth-user-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 13px;
+  }
+  .auth-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .auth-avatar-initials {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #60a5fa;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .sync-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.15s;
+    border: none;
+  }
+  .sync-indicator:hover { background: rgba(255,255,255,0.15); color:#fff; }
+  .sync-indicator.syncing { color: #60a5fa; }
+  .sync-indicator.error { color: #fca5a5; }
+  .sync-dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
+  .sync-spinner { width:10px; height:10px; border:1.5px solid rgba(255,255,255,0.3); border-top-color:#60a5fa; border-radius:50%; animation:spin 0.7s linear infinite; }
+
+  /* Collaborator badge on notes */
+  .note-author { font-size:10px; font-weight:600; color:var(--accent); margin-left:6px; }
+
+</style>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/Calendar/sw.js', {scope: '/Calendar/'})
+      .then(r => console.log('SW registered', r.scope))
+      .catch(e => console.log('SW failed', e));
+  });
+}
+</script>
+</head>
+<body>
+
+
+<!-- AUTH SCREEN -->
+<div class="auth-screen" id="authScreen">
+  <div class="auth-box">
+    <div class="auth-logo"><img src="data:image/png;base64,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" alt="Verifiabel" style="height:60px;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;"><span style="font-size:13px;color:var(--text-muted);display:block;text-align:center;">by Smart Solve</span></div>
+    <div class="auth-sub">Sign in to access your workspace</div>
+    <div id="googleSignInBtn"></div>
+  </div>
+</div>
+
+<div class="app-header">
+  <div class="app-logo"><img src="data:image/png;base64,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" alt="Verifiabel" style="height:36px;vertical-align:middle;margin-right:8px;"><span>by Smart Solve</span></div>
+  <div class="search-wrap" id="searchWrap">
+    <button class="search-icon-btn" id="searchIconBtn" onclick="openSearchBar()" title="Search">🔍</button>
+    <div class="search-expanded hidden" id="searchExpanded">
+      <input type="text" class="search-input" id="globalSearch" placeholder="Search…" oninput="onSearchInput(this.value)" onkeydown="if(event.key==='Escape'){closeSearchBar();}">
+      <button class="search-clear" id="searchClearBtn" onclick="closeSearchBar()">✕</button>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <button class="sync-indicator" id="syncIndicator" onclick="syncNow()" title="Sync to Google Drive">
+      <span class="sync-dot" id="syncDot"></span>
+      <span id="syncLabel">Synced</span>
+    </button>
+    <button class="sync-indicator" id="debugBtn" onclick="showDebug()" title="Debug info" style="font-size:10px;">🔧</button>
+    <div class="auth-user-bar" id="userBar" style="display:none;">
+      <div class="auth-avatar-initials" id="userInitials">?</div>
+      <span id="userName" style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+      <button class="icon-btn" onclick="signOut()" style="color:rgba(255,255,255,0.6);font-size:11px;" title="Sign out">↩</button>
+    </div>
+    <button class="btn btn-sm" onclick="exportData()">↓ Export</button>
+    <label class="btn btn-sm" style="cursor:pointer;" title="Import backup JSON">↑ Import<input type="file" accept=".json" class="file-input-hidden" onchange="importData(event)"></label>
+    <button class="btn btn-sm btn-primary" onclick="openAddCardModal()">+ New Card</button>
+  </div>
+</div>
+
+<div class="tabs-bar" id="tabsBar"></div>
+
+
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-btn active" onclick="mobileSwitch('reachouts',this)" id="mnav_reachouts">
+    <span class="nav-icon">📡</span>Reachouts
+  </button>
+  <button class="mobile-nav-btn" onclick="mobileSwitch('leads',this)" id="mnav_leads">
+    <span class="nav-icon">🎯</span>Leads
+  </button>
+  <button class="mobile-nav-btn" onclick="mobileSwitch('pocs',this)" id="mnav_pocs">
+    <span class="nav-icon">🔬</span>POCs
+  </button>
+  <button class="mobile-nav-btn" onclick="mobileSwitch('projects',this)" id="mnav_projects">
+    <span class="nav-icon">🚀</span>Projects
+  </button>
+  <button class="mobile-nav-btn" onclick="mobileSwitch('closed',this)" id="mnav_closed">
+    <span class="nav-icon">✓</span>Closed
+  </button>
+  <button class="mobile-nav-btn" onclick="mobileSwitch('todopad',this)" id="mnav_todopad">
+    <span class="nav-icon">☑</span>To Do
+  </button>
+</nav>
+
+<div class="main" id="mainContent"></div>
+
+<!-- CARD MODAL -->
+<div class="modal-overlay hidden" id="cardModal">
+  <div class="modal" id="cardModalInner">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <div class="modal-title" id="modalTitle" contenteditable="true" spellcheck="false"></div>
+        <div class="modal-subtitle" id="modalSubtitle"></div>
+      </div>
+      <button class="icon-btn danger" onclick="deleteCurrentCard()" title="Delete card">🗑</button>
+      <button class="icon-btn" onclick="closeCardModal()" style="font-size:18px;">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;align-items:center;gap:24px;margin-bottom:20px;flex-wrap:wrap;">
+        <div>
+          <div class="form-label">Priority</div>
+          <div class="priority-picker" id="priorityPicker"></div>
+        </div>
+        <div>
+          <div class="form-label">Move to tab</div>
+          <select class="form-select" id="moveToTab" onchange="moveCardToTab(this.value)" style="min-width:180px;padding:7px 10px;font-size:13px;"></select>
+        </div>
+        <div id="closedStatusWrap" class="hidden">
+          <div class="form-label">Outcome</div>
+          <select class="form-select" id="closedStatus" onchange="setClosedStatus(this.value)" style="min-width:140px;padding:7px 10px;font-size:13px;">
+            <option value="">— select —</option>
+            <option value="won">✓ Closed Won</option>
+            <option value="lost">✗ Closed Lost</option>
+          </select>
+        </div>
+        <div style="margin-left:auto;">
+          <div class="form-label">AI Assistant</div>
+          <button class="btn btn-sm" id="aiBtn" onclick="openAIPanel()" style="background:#ede9fe;border-color:#c4b5fd;color:#5b21b6;font-weight:600;">✨ Analyse</button>
+        </div>
+      </div>
+      <div id="aiPanel" class="hidden"></div>
+      <div class="notes-section">
+        <div class="section-label">Notes</div>
+        <div class="note-compose" id="noteCompose">
+          <textarea id="noteTextArea" autocomplete="off" placeholder="Write a note, update, or thought…" rows="3"></textarea>
+          <div class="compose-actions">
+            <label class="todo-toggle">
+              <input type="checkbox" id="isTodo" onchange="toggleTodoDate()">
+              <span>To-do</span>
+            </label>
+            <input type="datetime-local" class="todo-date-input hidden" id="todoDateTime">
+            <div class="compose-spacer"></div>
+            <label class="btn btn-sm btn-ghost" style="cursor:pointer;" title="Attach file">
+              📎 Attach
+              <input type="file" class="file-input-hidden" id="noteFileInput" multiple onchange="handleNoteAttachmentSelect(event)">
+            </label>
+            <button class="btn btn-sm btn-primary" onclick="addNoteToCard()">Add Note</button>
+          </div>
+          <div id="pendingAttachments" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;"></div>
+        </div>
+        <div class="notes-list" id="notesList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD CARD MODAL -->
+<div class="modal-overlay hidden" id="addCardModal">
+  <div class="modal" style="max-width:480px;">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <div class="modal-title">New Card</div>
+      </div>
+      <button class="icon-btn" onclick="closeAddCardModal()" style="font-size:18px;">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Project / Lead Name</label>
+        <input type="text" class="form-input" id="newCardName" placeholder="Enter name…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tab</label>
+        <select class="form-select" id="newCardTab"></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Priority</label>
+        <div class="priority-picker" id="addCardPriorityPicker"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeAddCardModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="createCard()">Create Card</button>
+    </div>
+  </div>
+</div>
+
+<!-- GCAL MODAL -->
+<div class="modal-overlay hidden" id="gcalModal">
+  <div class="gcal-modal">
+    <h3>Add to Google Calendar</h3>
+    <p id="gcalEventDesc">Choose which Google account to add this event to.</p>
+    <div class="gcal-event-preview" id="gcalEventPreview">
+      <div class="ev-title" id="gcalEvTitle"></div>
+      <div class="ev-time" id="gcalEvTime"></div>
+    </div>
+    <label style="font-size:12px;font-weight:600;color:var(--text-muted);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">Google Account Email</label>
+    <input type="email" class="gcal-account-input" id="gcalEmailInput" placeholder="yourname@gmail.com">
+    <div class="gcal-saved-accounts" id="gcalSavedAccounts"></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:4px;">
+      <button class="btn" onclick="closeGCalModal()">Cancel</button>
+      <button class="btn btn-primary" style="background:#1a73e8;border-color:#1a73e8;" onclick="addToGCal()">Open in Google Calendar</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI MODAL -->
+<div class="modal-overlay hidden" id="aiKeyModal">
+  <div class="modal" style="max-width:440px;">
+    <div class="modal-header">
+      <div class="modal-title-wrap"><div class="modal-title">AI Assistant Setup</div></div>
+      <button class="icon-btn" onclick="document.getElementById('aiKeyModal').classList.add('hidden')" style="font-size:18px;">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Enter your Anthropic API key to enable AI analysis. It's stored only in your browser — never sent anywhere except directly to Anthropic.</p>
+      <div class="form-group">
+        <label class="form-label">Anthropic API Key</label>
+        <input type="password" class="form-input" id="aiKeyInput" placeholder="sk-ant-…">
+      </div>
+      <p style="font-size:11px;color:var(--text-dim);">Get your key at console.anthropic.com</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="document.getElementById('aiKeyModal').classList.add('hidden')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveApiKey()">Save & Analyse</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- DEBUG MODAL -->
+<div class="modal-overlay hidden" id="debugModal">
+  <div class="modal" style="max-width:480px;">
+    <div class="modal-header">
+      <div class="modal-title-wrap"><div class="modal-title">Debug Info</div></div>
+      <button class="icon-btn" onclick="document.getElementById('debugModal').classList.add('hidden')" style="font-size:18px;">✕</button>
+    </div>
+    <div class="modal-body">
+      <pre id="debugOutput" style="font-size:11px;background:#f8fafc;padding:12px;border-radius:8px;overflow:auto;max-height:300px;white-space:pre-wrap;word-break:break-all;"></pre>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-sm btn-primary" onclick="debugForceLoad()">Force Load from Drive</button>
+        <button class="btn btn-sm btn-primary" onclick="saveToDrive()" style="background:#15803d;border-color:#15803d;">Push to Drive</button>
+        <button class="btn btn-sm" onclick="debugSetOwner()">Set as Owner</button>
+        <button class="btn btn-sm btn-danger" onclick="debugClearAll()">Clear & Reload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay hidden" id="confirmModal" style="z-index:9998;">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">Are you sure?</h3>
+    <p id="confirmMessage">This cannot be undone.</p>
+    <div style="display:flex;gap:8px;justify-content:center;">
+      <button class="btn" onclick="closeConfirm()">Cancel</button>
+      <button class="btn btn-danger" id="confirmActionBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const TABS = [
+  { id: 'reachouts', label: 'New Reachouts' },
+  { id: 'leads', label: 'Active Leads' },
+  { id: 'pocs', label: 'POCs' },
+  { id: 'projects', label: 'Active Projects' },
+  { id: 'closed', label: 'Closed' },
+  { id: 'todopad', label: 'To Do' },
+];
+
+let state = {
+  activeTab: 'reachouts',
+  cards: {},
+  todoLists: [],
+  deletedNoteIds: [], // track intentionally deleted notes so merge doesn't restore them
+  newCardPriority: 3,
+  currentCardId: null,
+  pendingAttachments: [],
+  confirmCallback: null,
+};
+
+// STORAGE (save() is defined in Google Drive sync section below)
+function load() {
+  try {
+    const d = localStorage.getItem('pcmd_v2');
+    if (d) {
+      const p = JSON.parse(d);
+      state.cards = p.cards || {};
+      state.todoLists = p.todoLists || initDefaultTodoLists();
+      state.deletedNoteIds = p.deletedNoteIds || [];
+    } else {
+      state.todoLists = initDefaultTodoLists();
+    }
+  } catch(e) { state.todoLists = initDefaultTodoLists(); }
+}
+function initDefaultTodoLists() {
+  return [
+    { id: 'verifiable', title: 'Verifiabel', locked: true, items: [] },
+    { id: 'todayslist', title: "TODAY'S LIST", locked: true, todayLocked: true, items: [] },
+    { id: uid(), title: 'Personal', locked: false, items: [] },
+  ];
+}
+
+// Ensure TODAY'S LIST always exists as second card (migration for existing data)
+function ensureTodaysList() {
+  if (!state.todoLists) return;
+  const hasToday = state.todoLists.find(l => l.id === 'todayslist');
+  if (!hasToday) {
+    state.todoLists.splice(1, 0, { id: 'todayslist', title: "TODAY'S LIST", locked: true, todayLocked: true, items: [] });
+    save();
+  }
+  // Ensure locked+todayLocked flags are set (migration)
+  const tl = state.todoLists.find(l => l.id === 'todayslist');
+  if (tl) { tl.locked = true; tl.todayLocked = true; tl.title = "TODAY'S LIST"; }
+}
+
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+// INIT
+function init() {
+  load();
+  fixVerifiabelSpelling();
+  ensureTodaysList();
+  renderTabs();
+  updateMobileNav(state.activeTab);
+  renderBoard();
+}
+
+function fixVerifiabelSpelling() {
+  if (!state.todoLists) return;
+  let fixed = false;
+  state.todoLists.forEach(l => {
+    if (l.id === 'verifiable' && l.title !== 'Verifiabel') {
+      l.title = 'Verifiabel';
+      fixed = true;
+    }
+  });
+  if (fixed) save();
+}
+
+// TABS
+function renderTabs() {
+  const bar = document.getElementById('tabsBar');
+  bar.innerHTML = TABS.map(t => `
+    <button class="tab-btn ${state.activeTab===t.id?'active':''}" onclick="switchTab('${t.id}')">${t.label}</button>
+  `).join('');
+}
+
+function switchTab(id) {
+  state.activeTab = id;
+  renderTabs();
+  updateMobileNav(id);
+  renderBoard();
+}
+
+function mobileSwitch(id, btn) {
+  switchTab(id);
+}
+
+function updateMobileNav(id) {
+  document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('mnav_' + id);
+  if (btn) btn.classList.add('active');
+}
+
+// BOARD
+function renderBoard() {
+  const main = document.getElementById('mainContent');
+  if (state.activeTab === 'todopad') { renderTodoPad(main); return; }
+  if (state.activeTab === 'search') { renderSearchResults(main); return; }
+  if (state.activeTab === 'closed') { renderClosedBoard(main); return; }
+  const tabInfo = TABS.find(t => t.id === state.activeTab);
+  const tabCardsCount = Object.values(state.cards).filter(c=>c.tab===state.activeTab).length;
+  main.innerHTML = `
+    <div class="board-header">
+      <div>
+        <span class="board-title">${tabInfo.label}</span>
+        <span class="board-count">${tabCardsCount} card${tabCardsCount!==1?'s':''}</span>
+        <span class="sort-info">sorted by priority · drag to reorder within priority</span>
+      </div>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  `;
+  const grid = document.getElementById('cardsGrid');
+  initSortOrders(state.activeTab);
+  const tabCards2 = getTabCards(state.activeTab);
+  if (tabCards2.length === 0) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;"><div class="icon">📋</div><p>No cards yet. Add your first one!</p></div>`;
+  } else {
+    tabCards2.forEach(card => grid.appendChild(buildCardTile(card)));
+  }
+  grid.appendChild(buildAddTile());
+}
+
+function getTabCards(tabId) {
+  return Object.values(state.cards)
+    .filter(c => c.tab === tabId)
+    .sort((a,b) => {
+      const pd = (b.priority||0) - (a.priority||0);
+      if (pd !== 0) return pd;
+      return (a.sortOrder||0) - (b.sortOrder||0);
+    });
+}
+
+function initSortOrders(tabId) {
+  const cards = getTabCards(tabId);
+  cards.forEach((c,i) => { if (c.sortOrder === undefined) c.sortOrder = i * 10; });
+}
+
+function buildCardTile(card) {
+  const div = document.createElement('div');
+  div.className = 'project-card';
+  div.setAttribute('draggable', 'true');
+  div.setAttribute('data-id', card.id);
+  div.onclick = () => openCardModal(card.id);
+  div.addEventListener('dragstart', onDragStart);
+  div.addEventListener('dragend', onDragEnd);
+  div.addEventListener('dragover', onDragOver);
+  div.addEventListener('dragleave', onDragLeave);
+  div.addEventListener('drop', onDrop);
+
+  const notes = card.notes || [];
+  const todos = notes.filter(n => n.isTodo && !n.todoDone);
+  const attachCount = notes.reduce((s,n)=>(n.attachments||[]).length+s,0);
+  const latest = notes[0];
+  const now = new Date();
+  const overdueTodos = todos.filter(n => n.dueDate && new Date(n.dueDate) < now);
+
+  const priorityColors = ['','#4a4d55','#4ade80','#fbbf24','#f97316','#f87171'];
+  const pColor = priorityColors[card.priority||1];
+  const stars = starsHtml(card.priority||1, false);
+
+  let badgesHtml = '';
+  if (card.closedStatus) {
+    const isWon = card.closedStatus === 'won';
+    badgesHtml += `<span class="badge" style="background:${isWon?'#dcfce7':'#fee2e2'};color:${isWon?'#15803d':'#991b1b'};">${isWon?'✓ Won':'✗ Lost'}</span>`;
+  }
+  if (notes.length) badgesHtml += `<span class="badge badge-note">📝 ${notes.length}</span>`;
+  if (todos.length) badgesHtml += `<span class="badge badge-todo">☑ ${todos.length} todo</span>`;
+  if (attachCount) badgesHtml += `<span class="badge badge-attach">📎 ${attachCount}</span>`;
+  if (overdueTodos.length) badgesHtml += `<span class="badge badge-overdue">⚠ ${overdueTodos.length} overdue</span>`;
+
+  div.innerHTML = `
+    <div class="card-priority-bar" style="background:${pColor}"></div>
+    <div class="card-header">
+      <div class="card-name">${escHtml(card.name)}</div>
+      <div class="star-display">${stars}</div>
+    </div>
+    ${badgesHtml ? `<div class="card-meta">${badgesHtml}</div>` : ''}
+    ${latest ? `<div class="card-latest-note">${escHtml(latest.text)}</div>` : ''}
+    <button class="card-add-btn" onclick="event.stopPropagation();openCardModal('${card.id}',true)">+ Add note</button>
+  `;
+  return div;
+}
+
+function buildAddTile() {
+  const div = document.createElement('div');
+  div.className = 'add-card-tile';
+  div.innerHTML = `<span style="font-size:20px;opacity:0.4">+</span> New card`;
+  div.onclick = openAddCardModal;
+  return div;
+}
+
+function starsHtml(count, interactive, prefix='') {
+  let h = '';
+  for (let i=1;i<=5;i++) {
+    if (interactive) {
+      h += `<span class="priority-star ${i<=count?'filled':''}" onclick="${prefix}setPriority(${i})" data-star="${i}">★</span>`;
+    } else {
+      h += `<span class="star ${i<=count?'':'empty'}">★</span>`;
+    }
+  }
+  return h;
+}
+
+// CARD MODAL
+function openCardModal(id, focusNote=false) {
+  const card = state.cards[id];
+  if (!card) return;
+  state.currentCardId = id;
+  state.pendingAttachments = [];
+  document.getElementById('pendingAttachments').innerHTML = '';
+  document.getElementById('noteTextArea').value = '';
+  document.getElementById('isTodo').checked = false;
+  document.getElementById('todoDateTime').classList.add('hidden');
+  document.getElementById('todoDateTime').value = '';
+
+  document.getElementById('modalTitle').textContent = card.name;
+  document.getElementById('modalSubtitle').textContent = TABS.find(t=>t.id===card.tab).label;
+
+  renderPriorityPicker('priorityPicker', card.priority||1);
+  renderMoveToTab(card);
+  // Show closed status picker only on closed tab
+  const csWrap = document.getElementById('closedStatusWrap');
+  const aiPanel = document.getElementById('aiPanel');
+  aiPanel.classList.add('hidden');
+  aiPanel.innerHTML = '';
+  if (card.tab === 'closed') {
+    csWrap.classList.remove('hidden');
+    document.getElementById('closedStatus').value = card.closedStatus || '';
+  } else {
+    csWrap.classList.add('hidden');
+  }
+  renderNotes(card);
+  document.getElementById('cardModal').classList.remove('hidden');
+  if (focusNote) setTimeout(()=>document.getElementById('noteTextArea').focus(),100);
+}
+
+function renderMoveToTab(card) {
+  const sel = document.getElementById('moveToTab');
+  sel.innerHTML = TABS.filter(t => t.id !== 'todopad' && t.id !== 'search').map(t =>
+    `<option value="${t.id}" ${t.id === card.tab ? 'selected' : ''}>${t.label}</option>`
+  ).join('');
+}
+
+function moveCardToTab(newTab) {
+  const card = state.cards[state.currentCardId];
+  if (!card || card.tab === newTab) return;
+  const oldTab = card.tab;
+  card.tab = newTab;
+  card.sortOrder = undefined; // reset sort order in new tab
+  document.getElementById('modalSubtitle').textContent = TABS.find(t => t.id === newTab).label;
+  // Flash confirmation
+  const sel = document.getElementById('moveToTab');
+  sel.style.borderColor = 'var(--success)';
+  sel.style.background = 'var(--success-bg)';
+  setTimeout(() => { sel.style.borderColor = ''; sel.style.background = ''; }, 1000);
+  save();
+}
+
+function setClosedStatus(val) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  card.closedStatus = val;
+  save();
+}
+
+function closeCardModal() {
+  // save name edit
+  const card = state.cards[state.currentCardId];
+  if (card) {
+    const newName = document.getElementById('modalTitle').textContent.trim();
+    if (newName) card.name = newName;
+    save();
+  }
+  document.getElementById('cardModal').classList.add('hidden');
+  state.currentCardId = null;
+  renderBoard();
+}
+
+function renderPriorityPicker(containerId, current) {
+  const el = document.getElementById(containerId);
+  let h = '';
+  for (let i=1;i<=5;i++) {
+    h += `<span class="priority-star ${i<=current?'filled':''}" onclick="setPriority(${i},event)"  data-v="${i}">★</span>`;
+  }
+  h += `<span class="priority-label">P${current}</span>`;
+  el.innerHTML = h;
+}
+
+function setPriority(val, ev) {
+  if (state.currentCardId) {
+    state.cards[state.currentCardId].priority = val;
+    save();
+    renderPriorityPicker('priorityPicker', val);
+    renderBoard();
+  }
+}
+
+// NOTES
+function toggleTodoDate() {
+  const checked = document.getElementById('isTodo').checked;
+  document.getElementById('todoDateTime').classList.toggle('hidden', !checked);
+}
+
+let pendingNoteFiles = [];
+function handleNoteAttachmentSelect(ev) {
+  const files = Array.from(ev.target.files);
+  files.forEach(f => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      pendingNoteFiles.push({ name: f.name, data: e.target.result, type: f.type });
+      renderPendingAttachments();
+    };
+    reader.readAsDataURL(f);
+  });
+  ev.target.value = '';
+}
+
+function renderPendingAttachments() {
+  const cont = document.getElementById('pendingAttachments');
+  cont.innerHTML = pendingNoteFiles.map((f,i) => `
+    <div class="attach-chip">
+      <span class="attach-icon">${fileIcon(f.name)}</span>
+      <span style="overflow:hidden;text-overflow:ellipsis;">${escHtml(f.name)}</span>
+      <button class="attach-remove" onclick="removePendingFile(${i})">✕</button>
+    </div>
+  `).join('');
+}
+
+function removePendingFile(i) {
+  pendingNoteFiles.splice(i, 1);
+  renderPendingAttachments();
+}
+
+function addNoteToCard() {
+  const text = document.getElementById('noteTextArea').value.trim();
+  const isTodo = document.getElementById('isTodo').checked;
+  const dueDate = document.getElementById('todoDateTime').value;
+  if (!text && pendingNoteFiles.length === 0) return;
+
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  if (!card.notes) card.notes = [];
+
+  const note = {
+    id: uid(),
+    text,
+    ts: new Date().toISOString(),
+    isTodo,
+    dueDate: isTodo ? dueDate : null,
+    todoDone: false,
+    attachments: pendingNoteFiles.map(f => ({ name: f.name, data: f.data, type: f.type })),
+    author: gauth.user ? gauth.user.name : 'Unknown',
+    authorEmail: gauth.user ? gauth.user.email : null
+  };
+  card.notes.unshift(note);
+  save();
+  pendingNoteFiles = [];
+  renderPendingAttachments();
+  document.getElementById('noteTextArea').value = '';
+  document.getElementById('isTodo').checked = false;
+  document.getElementById('todoDateTime').classList.add('hidden');
+  document.getElementById('todoDateTime').value = '';
+  renderNotes(card);
+}
+
+function renderNotes(card) {
+  const list = document.getElementById('notesList');
+  const notes = card.notes || [];
+  if (notes.length === 0) {
+    list.innerHTML = `<div style="color:var(--text-dim);font-size:13px;text-align:center;padding:20px;">No notes yet</div>`;
+    return;
+  }
+  list.innerHTML = notes.map((n,i) => buildNoteHtml(n, i)).join('');
+}
+
+function buildNoteHtml(n, idx) {
+  const ts = formatTs(n.ts);
+  const now = new Date();
+  const isMyNote = !n.authorEmail || (gauth.user && gauth.user.email === n.authorEmail);
+  let todoHtml = '';
+
+  if (n.isTodo) {
+    const due = n.dueDate ? new Date(n.dueDate) : null;
+    const isOverdue = due && due < now && !n.todoDone;
+
+    const doneSpan = n.todoDone ? ' &nbsp;<span style="color:var(--success);font-size:10px;">Done</span>' : '';
+    const calBtn = due && !n.todoDone && isMyNote
+      ? n.addedToCalendar
+        ? `<span class="gcal-added" title="Added to Google Calendar">✓ GCal</span>`
+        : `<button class="gcal-btn" onclick="openGCalPrompt('${n.id}')" title="Add to Google Calendar">+ GCal</button>`
+      : '';
+
+    if (due) {
+      // HAS a date — show badge only, picker hidden until clicked
+      todoHtml = `
+        <div class="note-todo-info">
+          <input type="checkbox" class="todo-check" ${n.todoDone?'checked':''} onchange="toggleNoteDone('${n.id}')">
+          <span class="note-due-badge ${isOverdue&&!n.todoDone?'overdue':''}" onclick="toggleNoteDatePicker('${n.id}')" title="Click to change date">
+            &#128197; ${formatDue(due)}${doneSpan}
+          </span>
+          ${calBtn}
+        </div>
+        <div id="ndp_${n.id}" style="display:none;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap;">
+          <input type="datetime-local" class="todo-date-input" id="ndt_${n.id}"
+            onchange="updateNoteDate('${n.id}', this.value)">
+          <button class="btn btn-sm btn-ghost" style="font-size:11px;" onclick="clearNoteDate('${n.id}')">Clear date</button>
+        </div>`;
+    } else {
+      // NO date — show picker inline
+      todoHtml = `
+        <div class="note-todo-info">
+          <input type="checkbox" class="todo-check" ${n.todoDone?'checked':''} onchange="toggleNoteDone('${n.id}')">
+          <span style="color:var(--text-muted);font-size:11px;">To-do${doneSpan}</span>
+        </div>
+        <div id="ndp_${n.id}" style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap;">
+          <span style="font-size:11px;color:var(--text-dim);">Set date/time:</span>
+          <input type="datetime-local" class="todo-date-input" id="ndt_${n.id}"
+            onchange="updateNoteDate('${n.id}', this.value)">
+        </div>`;
+    }
+  }
+
+  const attachHtml = (n.attachments||[]).length ? `
+    <div class="note-attachments">
+      ${n.attachments.map((a,ai)=>`
+        <div class="attach-chip" onclick="openAttachment('${n.id}',${ai})">
+          <span class="attach-icon">${fileIcon(a.name)}</span>
+          <span style="overflow:hidden;text-overflow:ellipsis;">${escHtml(a.name)}</span>
+          <button class="attach-remove" onclick="event.stopPropagation();removeAttachment('${n.id}',${ai})">✕</button>
+        </div>
+      `).join('')}
+    </div>` : '';
+
+  const authorTag = n.author ? `<span class="note-author-tag">${escHtml(n.author)}</span>` : '';
+  return `<div class="note-item ${n.isTodo?'is-todo':''} ${n.todoDone?'todo-done':''}" id="ni_${n.id}">
+    <div class="note-top">
+      <span class="note-ts">${ts} ${authorTag}</span>
+      <div class="note-actions">
+        ${isMyNote ? `<button class="icon-btn danger" onclick="deleteNote('${n.id}')" title="Delete note">🗑</button>` : ''}
+      </div>
+    </div>
+    <div class="note-body" id="nb_${n.id}">${escHtml(n.text)}</div>
+    ${todoHtml}${attachHtml}
+  </div>`;
+}
+
+function toggleNoteDatePicker(noteId) {
+  const el = document.getElementById('ndp_' + noteId);
+  if (!el) return;
+  el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+}
+
+function updateNoteDate(noteId, val) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const n = card.notes.find(n => n.id === noteId);
+  if (!n) return;
+  n.dueDate = val || null;
+  save();
+  renderNotes(card);
+}
+
+function clearNoteDate(noteId) {
+  updateNoteDate(noteId, null);
+}
+
+function toggleNoteDone(noteId) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const n = card.notes.find(n=>n.id===noteId);
+  if (n) { n.todoDone = !n.todoDone; save(); renderNotes(card); }
+}
+
+function deleteNote(noteId) {
+  showConfirm('Delete note?', 'This note will be permanently removed.', () => {
+    const card = state.cards[state.currentCardId];
+    if (!card) return;
+    card.notes = card.notes.filter(n=>n.id!==noteId);
+    if (!state.deletedNoteIds.includes(noteId)) state.deletedNoteIds.push(noteId);
+    save();
+    renderNotes(card);
+  });
+}
+
+function openAttachment(noteId, attIdx) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const n = card.notes.find(n=>n.id===noteId);
+  if (!n || !n.attachments[attIdx]) return;
+  const a = n.attachments[attIdx];
+  const link = document.createElement('a');
+  link.href = a.data;
+  link.download = a.name;
+  link.click();
+}
+
+function removeAttachment(noteId, attIdx) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const n = card.notes.find(n=>n.id===noteId);
+  if (n) { n.attachments.splice(attIdx, 1); save(); renderNotes(card); }
+}
+
+// ADD CARD
+let addCardPriority = 3;
+function openAddCardModal() {
+  addCardPriority = 3;
+  const sel = document.getElementById('newCardTab');
+  sel.innerHTML = TABS.filter(t=>t.id!=='todopad'&&t.id!=='search').map(t=>`<option value="${t.id}" ${t.id===state.activeTab&&state.activeTab!=='todopad'&&state.activeTab!=='search'?'selected':''}>${t.label}</option>`).join('');
+  renderAddCardPriority();
+  document.getElementById('newCardName').value = '';
+  document.getElementById('addCardModal').classList.remove('hidden');
+  setTimeout(()=>document.getElementById('newCardName').focus(),100);
+}
+
+function closeAddCardModal() {
+  document.getElementById('addCardModal').classList.add('hidden');
+}
+
+function renderAddCardPriority() {
+  const el = document.getElementById('addCardPriorityPicker');
+  let h = '';
+  for (let i=1;i<=5;i++) {
+    h += `<span class="priority-star ${i<=addCardPriority?'filled':''}" onclick="setAddCardPriority(${i})">★</span>`;
+  }
+  h += `<span class="priority-label">P${addCardPriority}</span>`;
+  el.innerHTML = h;
+}
+
+function setAddCardPriority(v) {
+  addCardPriority = v;
+  renderAddCardPriority();
+}
+
+function createCard() {
+  const name = document.getElementById('newCardName').value.trim();
+  const tab = document.getElementById('newCardTab').value;
+  if (!name) { document.getElementById('newCardName').focus(); return; }
+  const id = uid();
+  state.cards[id] = { id, name, tab, priority: addCardPriority, notes: [], createdAt: new Date().toISOString() };
+  save();
+  closeAddCardModal();
+  if (state.activeTab !== 'todos' && state.activeTab !== tab) switchTab(tab);
+  else renderBoard();
+}
+
+// DELETE CARD
+function deleteCurrentCard() {
+  showConfirm('Delete this card?', 'All notes and attachments will be lost.', () => {
+    delete state.cards[state.currentCardId];
+    save();
+    closeCardModal();
+  });
+}
+
+// ── TO DO PAD ──────────────────────────────────────────────────────────────
+
+function renderTodoPad(main) {
+  const lists = state.todoLists;
+  const pendingCount = lists.reduce((s,l) => s + (l.locked ? 0 : l.items.filter(i=>!i.done).length), 0);
+
+  main.innerHTML = `
+    <div class="board-header" style="margin-bottom:20px;">
+      <div>
+        <span class="board-title">To Do</span>
+        <span class="board-count">${lists.length} list${lists.length!==1?'s':''}</span>
+      </div>
+      ${(()=>{
+        const isOwnerNow = isOwner();
+        if (!isOwnerNow) return '';
+        return lists.filter(l=>!l.locked).length < 4
+          ? '<button class="btn btn-primary btn-sm" onclick="addTodoList()">+ New List</button>'
+          : '<span style="font-size:12px;color:var(--text-dim);">Max 5 lists (4 custom + Verifiabel)</span>';
+      })()}
+    </div>
+    <div class="todopad-grid" id="todopadGrid"></div>
+  `;
+
+  const grid = document.getElementById('todopadGrid');
+  // Check owner by comparing signed-in email directly
+  const owner = isOwner();
+  const visibleLists = isOwner() ? lists : lists.filter(l => l.id === 'verifiable');
+  visibleLists.forEach(list => grid.appendChild(buildTodoPadCard(list)));
+}
+
+function buildTodoPadCard(list) {
+  const wrap = document.createElement('div');
+  wrap.className = 'todopad-card';
+  wrap.setAttribute('data-list-id', list.id);
+
+  let items = [];
+
+  if (list.id === 'verifiable') {
+    // Pull dated to-dos from work tabs — filter to current user's own items
+    const WORK_TABS = ['reachouts','leads','pocs','projects'];
+    const currentEmail = gauth.user ? gauth.user.email : null;
+    Object.values(state.cards).forEach(card => {
+      if (!WORK_TABS.includes(card.tab)) return;
+      (card.notes||[]).forEach(n => {
+        if (n.isTodo && n.dueDate && !n.todoDone) {
+          // Only show pending notes explicitly belonging to current user
+          if (n.authorEmail && n.authorEmail === currentEmail) {
+            items.push({ id: n.id, cardId: card.id, text: n.text, dueDate: n.dueDate,
+              done: n.todoDone, enteredAt: n.ts, addedToCalendar: n.addedToCalendar || false, source: card.name,
+              sourceTab: TABS.find(t=>t.id===card.tab)?.label || '',
+              authorEmail: n.authorEmail });
+          }
+        }
+      });
+    });
+    items.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+  } else if (list.id === 'todayslist') {
+    const currentEmail = gauth.user ? gauth.user.email : null;
+    items = (list.items || []).filter(i => !i.authorEmail || i.authorEmail === currentEmail)
+      .slice().sort((a,b) => {
+        if (a.dueDate && b.dueDate) return new Date(a.dueDate) - new Date(b.dueDate);
+        if (a.dueDate) return -1; if (b.dueDate) return 1;
+        return new Date(a.enteredAt) - new Date(b.enteredAt);
+      });
+
+  } else {
+    // Show only current user's items (or all if no author info yet)
+    const currentEmail = gauth.user ? gauth.user.email : null;
+    items = (list.items || []).filter(i => !i.authorEmail || i.authorEmail === currentEmail)
+      .slice().sort((a,b) => {
+        if (a.dueDate && b.dueDate) return new Date(a.dueDate) - new Date(b.dueDate);
+        if (a.dueDate) return -1; if (b.dueDate) return 1;
+        return new Date(a.enteredAt) - new Date(b.enteredAt);
+      });
+  }
+
+  const now = new Date();
+  const pending = items.filter(i=>!i.done).length;
+  const done = items.filter(i=>i.done).length;
+
+  const buildItem = (item) => {
+    const due = item.dueDate ? new Date(item.dueDate) : null;
+    const isOverdue = due && due < now && !item.done;
+    const isCustom = !list.locked;
+    const isToday = list.id === 'todayslist';
+
+    // Determine ownership — check note's authorEmail for Verifiabel items
+    let itemAuthorEmail = item.authorEmail || null;
+    if (list.id === 'verifiable' && item.cardId) {
+      const srcCard = state.cards[item.cardId];
+      const srcNote = srcCard && srcCard.notes ? srcCard.notes.find(n => n.id === item.id) : null;
+      if (srcNote) itemAuthorEmail = srcNote.authorEmail || null;
+    }
+    const isMyItem = !itemAuthorEmail || (gauth.user && gauth.user.email === itemAuthorEmail);
+
+    const calBtn = due && !item.done && isMyItem
+      ? item.addedToCalendar
+        ? `<span class="gcal-added" style="font-size:10px;padding:2px 6px;" title="Added to Google Calendar">✓ Cal</span>`
+        : `<button class="gcal-btn" style="font-size:10px;padding:2px 6px;" onclick="event.stopPropagation();openGCalPromptPad('${list.id}','${item.id}','${item.cardId||''}')">📅</button>`
+      : '';
+
+    const dueTxt = due
+      ? `<span class="todopad-due ${isOverdue?'overdue':''}">${isOverdue?'⚠ ':''}${formatDue(due)}</span>`
+      : '';
+
+    const datePickerVal = item.dueDate ? item.dueDate.slice(0,16) : '';
+    const datePicker = (isCustom || isToday)
+      ? `<input type="datetime-local" class="todopad-inline-date" value="${datePickerVal}" onchange="setTodoPadItemDate('${list.id}','${item.id}',this.value)" title="Set due date" style="font-size:10px;padding:2px 5px;border:1px solid var(--border);border-radius:4px;background:#fff;color:var(--text);margin-top:3px;width:100%;">`
+      : '';
+
+    let metaHtml = '';
+    if (list.id === 'verifiable') {
+      metaHtml = `<div style="font-size:10px;color:var(--text-dim);margin-top:2px;">${escHtml(item.sourceTab)} · ${escHtml(item.source)}</div>`;
+    } else if (isToday) {
+      const srcList = state.todoLists.find(l=>l.id===item.srcListId);
+      const authorStr = item.author ? ` · <span style="color:var(--accent);font-weight:600;">${escHtml(item.author)}</span>` : '';
+      metaHtml = `<div style="font-size:10px;color:var(--text-dim);margin-top:2px;">from ${escHtml(srcList?.title||'')}${authorStr}</div>`;
+    } else if (isCustom && item.author) {
+      metaHtml = `<div style="font-size:10px;font-weight:600;color:var(--accent);margin-top:2px;">${escHtml(item.author)}</div>`;
+    }
+
+    let onchange = '';
+    if (list.id === 'verifiable') onchange = `toggleVerifiabel('${item.id}','${item.cardId}')`;
+    else if (isToday) onchange = `toggleTodayItem('${item.srcListId}','${item.id}')`;
+    else onchange = `toggleTodoPadItem('${list.id}','${item.id}')`;
+
+    let actionBtns = calBtn;
+    if (isToday && isMyItem) {
+      actionBtns += `<button class="todopad-del-item" title="Return to original list" onclick="event.stopPropagation();returnTodayItem('${item.srcListId}','${item.id}')" style="color:var(--accent);">↩</button>`;
+      actionBtns += `<button class="todopad-del-item" title="Delete permanently" onclick="event.stopPropagation();removeTodayRef('${item.srcListId}','${item.id}')">✕</button>`;
+    } else if (isCustom && isMyItem) {
+      actionBtns += `<button class="todopad-del-item" onclick="event.stopPropagation();deleteTodoPadItem('${list.id}','${item.id}')">✕</button>`;
+    }
+
+    let addTodayBtn = '';
+    // Show → Today for custom list items AND Verifiabel items (owner only)
+    const canMoveToToday = (!list.locked || list.id === 'verifiable') && isMyItem && isOwner();
+    if (canMoveToToday) {
+      const alreadyToday = (state.todoLists.find(l=>l.id==='todayslist')?.items||[]).some(r=>r.srcItemId===item.id);
+      addTodayBtn = alreadyToday
+        ? `<span style="font-size:10px;color:var(--success);padding:2px 4px;">✓ Today</span>`
+        : `<button class="todopad-add-today-btn" onclick="addToTodaysList('${list.id}','${item.id}')" title="Move to Today's List">→ Today</button>`;
+    }
+
+    return `<div class="todopad-item ${item.done?'done':''}">
+      <input type="checkbox" class="todopad-check" ${item.done?'checked':''} onchange="${onchange}">
+      <div style="flex:1;min-width:0;">
+        <div class="todopad-item-text ${item.done?'line-through':''}">${escHtml(item.text)}</div>
+        ${dueTxt}${metaHtml}${datePicker}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;flex-shrink:0;">
+        <div style="display:flex;gap:3px;">${actionBtns}</div>
+        ${addTodayBtn}
+      </div>
+    </div>`;
+  };
+  let itemsHtml = items.length === 0
+    ? `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:20px 10px;">
+        ${list.id==='verifiable' ? 'No dated to-dos from your work tabs yet'
+          : list.id==='todayslist' ? 'Use "+ Today" on any item from your other lists'
+          : 'No items yet — add one below'}
+       </div>`
+    : items.map(buildItem).join('');
+
+  const addRow = (list.locked || !isOwner()) ? '' : `
+    <div class="todopad-add-row">
+      <input type="text" class="todopad-input" autocomplete="off" id="ti_text_${list.id}" placeholder="Add a to-do…" onkeydown="if(event.key==='Enter')addTodoPadItem('${list.id}')">
+      <input type="datetime-local" class="todo-date-input" id="ti_date_${list.id}" style="font-size:11px;padding:4px 6px;width:100%;">
+      <button class="btn btn-sm btn-primary" style="font-size:11px;padding:5px 10px;" onclick="addTodoPadItem('${list.id}')">Add</button>
+    </div>`;
+
+  const deleteBtn = (list.locked || !isOwner()) ? '' : `<button class="todopad-delete-card-btn" onclick="deleteTodoList('${list.id}')" title="Delete list">🗑</button>`;
+
+  const headerAccent = list.id === 'todayslist' ? 'background:#1d4ed8;' : '';
+
+  wrap.innerHTML = `
+    <div class="todopad-header" style="${headerAccent}">
+      <div style="flex:1;min-width:0;">
+        <div class="todopad-title" contenteditable="${list.locked ? 'false' : 'true'}" spellcheck="false" onblur="renameTodoList('${list.id}',this.textContent)" style="${list.locked ? '' : 'cursor:text;'}">${escHtml(list.title)}</div>
+        <div class="todopad-count">${pending} pending · ${done} done</div>
+      </div>
+      ${deleteBtn}
+    </div>
+    <div class="todopad-items">${itemsHtml}</div>
+    ${addRow}
+  `;
+  return wrap;
+}
+
+// TODAY'S LIST helpers
+function addToTodaysList(srcListId, srcItemId) {
+  const tl = state.todoLists.find(l => l.id === 'todayslist');
+  if (!tl) return;
+
+  if (srcListId === 'verifiable') {
+    // Verifiabel items are virtual — just add a reference, don't remove from source
+    const already = tl.items.some(r => r.srcItemId === srcItemId);
+    if (already) return;
+    // Find the item details from cards
+    let itemDetails = null;
+    const WORK_TABS = ['reachouts','leads','pocs','projects'];
+    Object.values(state.cards).forEach(card => {
+      if (!WORK_TABS.includes(card.tab)) return;
+      (card.notes||[]).forEach(n => {
+        if (n.id === srcItemId) {
+          itemDetails = { id: uid(), text: n.text, dueDate: n.dueDate, done: n.todoDone,
+            enteredAt: n.ts, author: n.author, authorEmail: n.authorEmail,
+            srcListId: 'verifiable', srcItemId: n.id, cardId: card.id, isRef: true };
+        }
+      });
+    });
+    if (itemDetails) { tl.items.push(itemDetails); save(); renderBoard(); }
+    return;
+  }
+
+  // Custom list — true move
+  const srcList = state.todoLists.find(l => l.id === srcListId);
+  if (!srcList) return;
+  const itemIdx = srcList.items.findIndex(i => i.id === srcItemId);
+  if (itemIdx === -1) return;
+  const item = srcList.items.splice(itemIdx, 1)[0];
+  tl.items.push({ ...item, srcListId, srcItemId: item.id, isRef: true });
+  save();
+  renderBoard();
+}
+
+function removeTodayRef(srcListId, srcItemId) {
+  const tl = state.todoLists.find(l => l.id === 'todayslist');
+  if (!tl) return;
+  const item = tl.items.find(r => r.srcItemId === srcItemId || r.id === srcItemId);
+  const preview = item ? (item.text || '').slice(0, 50) : 'this item';
+  showConfirm('Delete to-do?', '"' + preview + '"', () => {
+    // Remove from Today's list
+    tl.items = tl.items.filter(r => r.srcItemId !== srcItemId && r.id !== srcItemId);
+    // Also delete from the source custom list so it doesn't reappear
+    if (item && item.srcListId && item.srcListId !== 'verifiable') {
+      const srcList = state.todoLists.find(l => l.id === item.srcListId);
+      if (srcList) {
+        const itemId = item.srcItemId || srcItemId;
+        srcList.items = srcList.items.filter(i => i.id !== itemId);
+        // Track deleted item ID to prevent merge from restoring it
+        if (!state.deletedNoteIds.includes(itemId)) state.deletedNoteIds.push(itemId);
+      }
+    }
+    // If from a card (Verifiabel), mark original note as done
+    if (item && item.cardId) {
+      const noteId = item.srcItemId || srcItemId;
+      const card = state.cards[item.cardId];
+      if (card) {
+        const note = card.notes.find(n => n.id === noteId);
+        if (note) note.todoDone = true;
+      }
+      if (!state.deletedNoteIds.includes(noteId)) state.deletedNoteIds.push(noteId);
+    }
+    save();
+    renderBoard();
+  });
+  const cm = document.getElementById('confirmModal');
+  if (cm) { cm.classList.remove('hidden'); cm.style.zIndex = '9998'; }
+}
+
+function returnTodayItem(srcListId, srcItemId) {
+  // Return to original list — removes from Today, puts back in source
+  const tl = state.todoLists.find(l => l.id === 'todayslist');
+  const srcList = state.todoLists.find(l => l.id === srcListId);
+  if (!tl) return;
+  const refIdx = tl.items.findIndex(r => r.srcItemId === srcItemId || r.id === srcItemId);
+  if (refIdx === -1) return;
+  const ref = tl.items.splice(refIdx, 1)[0];
+  if (srcList) {
+    const { srcListId: _sl, srcItemId: _si, isRef: _r, ...originalItem } = ref;
+    srcList.items.push(originalItem);
+  }
+  save();
+  renderBoard();
+}
+
+function toggleTodayItem(srcListId, itemId) {
+  const tl = state.todoLists.find(l => l.id === 'todayslist');
+  if (!tl) return;
+  const item = tl.items.find(i => i.srcItemId === itemId || i.id === itemId);
+  if (item) { item.done = !item.done; save(); renderBoard(); }
+}
+
+function setTodoPadItemDate(listId, itemId, dateVal) {
+  if (listId === 'todayslist') {
+    const tl = state.todoLists.find(l => l.id === 'todayslist');
+    if (!tl) return;
+    const item = tl.items.find(i => i.srcItemId === itemId || i.id === itemId);
+    if (item) { item.dueDate = dateVal || null; save(); renderBoard(); }
+  } else {
+    const list = state.todoLists.find(l => l.id === listId);
+    if (!list) return;
+    const item = list.items.find(i => i.id === itemId);
+    if (item) { item.dueDate = dateVal || null; save(); renderBoard(); }
+  }
+}
+
+function addTodoList() {
+  const custom = state.todoLists.filter(l=>!l.locked);
+  if (custom.length >= 4) return;
+  state.todoLists.push({ id: uid(), title: 'New List', locked: false, items: [] });
+  save();
+  renderBoard();
+}
+
+function deleteTodoList(listId) {
+  showConfirm('Delete this list?', 'All items in this list will be lost.', () => {
+    state.todoLists = state.todoLists.filter(l=>l.id!==listId);
+    save();
+    renderBoard();
+  });
+}
+
+function renameTodoList(listId, newTitle) {
+  const list = state.todoLists.find(l=>l.id===listId);
+  if (list && !list.locked) {
+    const t = newTitle.trim();
+    if (t && t !== list.title) { list.title = t; save(); renderBoard(); }
+  }
+}
+
+function addTodoPadItem(listId) {
+  const list = state.todoLists.find(l=>l.id===listId);
+  if (!list || list.locked) return;
+  const textEl = document.getElementById('ti_text_'+listId);
+  const dateEl = document.getElementById('ti_date_'+listId);
+  const text = textEl ? textEl.value.trim() : '';
+  if (!text) { if(textEl) textEl.focus(); return; }
+  const dueDate = dateEl ? dateEl.value : '';
+  list.items.push({ id: uid(), text, dueDate: dueDate||null, done: false, enteredAt: new Date().toISOString(), author: gauth.user ? gauth.user.name : 'Unknown', authorEmail: gauth.user ? gauth.user.email : null });
+  save();
+  renderBoard();
+}
+
+function toggleTodoPadItem(listId, itemId) {
+  const list = state.todoLists.find(l=>l.id===listId);
+  if (!list) return;
+  const item = list.items.find(i=>i.id===itemId);
+  if (item) { item.done = !item.done; save(); renderBoard(); }
+}
+
+function toggleVerifiabel(noteId, cardId) {
+  // Sync with the actual note on the card
+  const card = state.cards[cardId];
+  if (!card) return;
+  const n = card.notes.find(n=>n.id===noteId);
+  if (n) { n.todoDone = !n.todoDone; save(); renderBoard(); }
+}
+
+function deleteTodoPadItem(listId, itemId) {
+  const list = state.todoLists.find(l => l.id === listId);
+  if (!list) return;
+  const item = list.items.find(i => i.id === itemId);
+  const preview = item ? '"' + (item.text || '').slice(0, 50) + '"' : 'this item';
+  showConfirm('Delete to-do?', preview, () => {
+    list.items = list.items.filter(i => i.id !== itemId);
+    save();
+    renderBoard();
+  });
+}
+
+function openGCalPromptPad(listId, itemId, cardId) {
+  if (cardId) { openGCalPromptFromList(cardId, itemId); return; }
+  const list = state.todoLists.find(l=>l.id===listId);
+  if (!list) return;
+  const item = list.items.find(i=>i.id===itemId);
+  if (!item) return;
+  gcalPendingNoteId = itemId;
+  gcalPendingCardId = null;
+  gcalPendingListId = listId;
+  // Auto-open if signed in
+  if (gauth.user && gauth.user.email) {
+    addToGCal();
+    return;
+  }
+  // Fallback to modal
+  document.getElementById('gcalEvTitle').textContent = item.text || '(No title)';
+  const due = item.dueDate ? new Date(item.dueDate) : null;
+  document.getElementById('gcalEvTime').textContent = due ? '📅 ' + formatDue(due) : 'No date';
+  document.getElementById('gcalEmailInput').value = '';
+  document.getElementById('gcalModal').classList.remove('hidden');
+}
+
+// CONFIRM
+function showConfirm(title, msg, cb) {
+  document.getElementById('confirmTitle').textContent = title;
+  document.getElementById('confirmMessage').textContent = msg;
+  state.confirmCallback = cb;
+  document.getElementById('confirmActionBtn').onclick = () => { cb(); closeConfirm(); };
+  document.getElementById('confirmModal').classList.remove('hidden');
+}
+function closeConfirm() {
+  document.getElementById('confirmModal').classList.add('hidden');
+}
+
+// IMPORT
+function importData(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      // Support both old format (cards only) and new format (cards + todoLists)
+      const newCards = parsed.cards || parsed;
+      const newTodoLists = parsed.todoLists || null;
+      showConfirm('Replace all data?', 'This will overwrite your current data with the backup and sync to Drive.', () => {
+        state.cards = newCards;
+        if (newTodoLists) state.todoLists = newTodoLists;
+        fixVerifiabelSpelling();
+        ensureTodaysList();
+        // save() will sync to Drive automatically
+        save();
+        renderBoard();
+        // Force immediate Drive sync (don't wait 2s debounce)
+        if (gauth && gauth.ready) {
+          clearTimeout(syncTimeout);
+          saveToDrive();
+        }
+      });
+    } catch(err) {
+      alert('Could not read the file — make sure it\'s a valid Project Verifiabel backup JSON.');
+    }
+  };
+  reader.readAsText(file);
+  ev.target.value = '';
+}
+
+// EXPORT
+function exportData() {
+  const blob = new Blob([JSON.stringify({cards: state.cards, todoLists: state.todoLists}, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'project-command-backup.json';
+  a.click();
+}
+
+// UTILS
+function escHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatTs(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + ' · ' + d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+}
+
+function formatDue(d) {
+  if (!d) return '';
+  return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + ' ' + d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+}
+
+function fileIcon(name) {
+  const ext = (name||'').split('.').pop().toLowerCase();
+  if (['jpg','jpeg','png','gif','webp','svg'].includes(ext)) return '🖼';
+  if (['pdf'].includes(ext)) return '📄';
+  if (['doc','docx'].includes(ext)) return '📝';
+  if (['xls','xlsx','csv'].includes(ext)) return '📊';
+  if (['zip','rar','7z'].includes(ext)) return '🗜';
+  if (['mp4','mov','avi'].includes(ext)) return '🎬';
+  if (['mp3','wav','m4a'].includes(ext)) return '🎵';
+  return '📎';
+}
+
+// Close modals on overlay click
+document.getElementById('cardModal').addEventListener('click', function(e) {
+  if (e.target === this) closeCardModal();
+});
+document.getElementById('addCardModal').addEventListener('click', function(e) {
+  if (e.target === this) closeAddCardModal();
+});
+document.getElementById('confirmModal').addEventListener('click', function(e) {
+  if (e.target === this) closeConfirm();
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (!document.getElementById('confirmModal').classList.contains('hidden')) { closeConfirm(); return; }
+    if (!document.getElementById('addCardModal').classList.contains('hidden')) { closeAddCardModal(); return; }
+    if (!document.getElementById('cardModal').classList.contains('hidden')) { closeCardModal(); return; }
+  }
+});
+
+// init() is now called by onAuthReady() after Google Sign-in
+// Fallback init for offline mode handled by window.onload above
+
+// ── GLOBAL SEARCH ─────────────────────────────────────────────────────────────
+let searchTimeout = null;
+function onSearchInput(val) {
+  clearTimeout(searchTimeout);
+  // Read directly from element to avoid mobile IME reversal bug
+  const q = document.getElementById('globalSearch').value.trim();
+  document.getElementById('searchClearBtn').classList.toggle('hidden', !q);
+  if (!q) { clearSearch(); return; }
+  searchTimeout = setTimeout(() => {
+    const currentQ = document.getElementById('globalSearch').value.trim();
+    if (!currentQ) { clearSearch(); return; }
+    state.activeTab = 'search';
+    state.searchQuery = currentQ;
+    renderTabs();
+    renderBoard();
+  }, 300);
+}
+
+function clearSearch() {
+  const el = document.getElementById('globalSearch');
+  if (el) el.value = '';
+  if (state.activeTab === 'search') {
+    state.activeTab = 'reachouts';
+    state.searchQuery = '';
+    renderTabs();
+    renderBoard();
+  }
+}
+
+function openSearchBar() {
+  document.getElementById('searchIconBtn').classList.add('hidden');
+  document.getElementById('searchExpanded').classList.remove('hidden');
+  setTimeout(() => document.getElementById('globalSearch').focus(), 50);
+}
+
+function closeSearchBar() {
+  document.getElementById('globalSearch').value = '';
+  document.getElementById('searchExpanded').classList.add('hidden');
+  document.getElementById('searchIconBtn').classList.remove('hidden');
+  clearSearch();
+}
+
+function renderSearchResults(main) {
+  const q = (state.searchQuery || '').toLowerCase().trim();
+  if (!q) { main.innerHTML = ''; return; }
+
+  const highlight = (text, q) => {
+    const idx = text.toLowerCase().indexOf(q);
+    if (idx < 0) return escHtml(text);
+    const start = Math.max(0, idx-40);
+    const end = Math.min(text.length, idx+q.length+60);
+    const snippet = (start>0?'…':'')+text.slice(start,end)+(end<text.length?'…':'');
+    const si = snippet.toLowerCase().indexOf(q);
+    if (si<0) return escHtml(snippet);
+    return escHtml(snippet.slice(0,si))+'<mark class="search-highlight">'+escHtml(snippet.slice(si,si+q.length))+'</mark>'+escHtml(snippet.slice(si+q.length));
+  };
+
+  const results = [];
+
+  // Search cards (all tabs)
+  Object.values(state.cards).forEach(card => {
+    const tabLabel = TABS.find(t=>t.id===card.tab)?.label || card.tab;
+    let snippets = [];
+    if (card.name && card.name.toLowerCase().includes(q)) snippets.push({ type:'name', text: card.name });
+    (card.notes||[]).forEach(n => {
+      if (n.text && n.text.toLowerCase().includes(q)) snippets.push({ type: n.isTodo?'todo':'note', text: n.text });
+    });
+    if (snippets.length) results.push({ kind:'card', card, tabLabel, snippets });
+  });
+
+  // Search To Do lists (custom lists only — Verifiabel covered via cards)
+  (state.todoLists||[]).filter(l=>!l.locked).forEach(list => {
+    (list.items||[]).forEach(item => {
+      if (item.text && item.text.toLowerCase().includes(q)) {
+        results.push({ kind:'todoitem', list, item });
+      }
+    });
+  });
+
+  const total = results.length;
+  main.innerHTML = `
+    <div class="board-header">
+      <span class="board-title">Search Results</span>
+      <span class="board-count">${total} result${total!==1?'s':''}</span>
+    </div>
+    <div style="max-width:700px;">
+      ${total === 0
+        ? `<div class="empty-state"><div class="icon">🔍</div><p>No results for "<strong>${escHtml(q)}</strong>"</p></div>`
+        : results.map(r => {
+            if (r.kind === 'card') {
+              return `<div class="search-result-item" onclick="openCardModal('${r.card.id}')">
+                <div class="search-result-tab">${escHtml(r.tabLabel)}</div>
+                <div class="search-result-card">${highlight(r.card.name||'', q)}</div>
+                ${r.snippets.filter(s=>s.type!=='name').slice(0,2).map(s=>`
+                  <div class="search-result-snippet">
+                    <span style="font-size:10px;color:var(--text-dim);margin-right:4px;">${s.type==='todo'?'☑':'📝'}</span>${highlight(s.text, q)}
+                  </div>`).join('')}
+              </div>`;
+            } else {
+              return `<div class="search-result-item" onclick="switchTab('todopad')">
+                <div class="search-result-tab">To Do · ${escHtml(r.list.title)}</div>
+                <div class="search-result-snippet">
+                  <span style="font-size:10px;color:var(--text-dim);margin-right:4px;">☑</span>${highlight(r.item.text, q)}
+                </div>
+              </div>`;
+            }
+          }).join('')}
+    </div>`;
+}
+
+// ── CLOSED TAB ───────────────────────────────────────────────────────────────
+// Closed tab renders via normal renderBoard (it uses getTabCards like other tabs)
+// But we override renderBoard for closed to show two columns Won / Lost
+// renderBoard handles all routing above
+
+function renderClosedBoard(main) {
+  const all = getTabCards('closed');
+  const won = all.filter(c=>c.closedStatus==='won');
+  const lost = all.filter(c=>(!c.closedStatus||c.closedStatus==='lost'));
+  main.innerHTML = `
+    <div class="board-header">
+      <div>
+        <span class="board-title">Closed</span>
+        <span class="board-count">${won.length} won · ${lost.length} lost</span>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="openAddCardModal()">+ New Card</button>
+    </div>
+    <div class="closed-grid">
+      <div>
+        <div class="closed-col-header closed-won-header">✓ Closed Won (${won.length})</div>
+        <div id="wonGrid" class="cards-grid" style="grid-template-columns:1fr;"></div>
+      </div>
+      <div>
+        <div class="closed-col-header closed-lost-header">✗ Closed Lost (${lost.length})</div>
+        <div id="lostGrid" class="cards-grid" style="grid-template-columns:1fr;"></div>
+      </div>
+    </div>`;
+  const wonGrid = document.getElementById('wonGrid');
+  const lostGrid = document.getElementById('lostGrid');
+  if (won.length===0) wonGrid.innerHTML=`<div style="color:var(--text-dim);font-size:13px;padding:16px;text-align:center;">None yet</div>`;
+  else won.forEach(c=>wonGrid.appendChild(buildCardTile(c)));
+  if (lost.length===0) lostGrid.innerHTML=`<div style="color:var(--text-dim);font-size:13px;padding:16px;text-align:center;">None yet</div>`;
+  else lost.forEach(c=>lostGrid.appendChild(buildCardTile(c)));
+}
+
+// ── AI ASSISTANT ─────────────────────────────────────────────────────────────
+function getApiKey() {
+  return localStorage.getItem('pcmd_api_key') || '';
+}
+function saveApiKey() {
+  const key = document.getElementById('aiKeyInput').value.trim();
+  if (!key) return;
+  localStorage.setItem('pcmd_api_key', key);
+  document.getElementById('aiKeyModal').classList.add('hidden');
+  runAIAnalysis();
+}
+
+function openAIPanel() {
+  const key = getApiKey();
+  if (!key) {
+    document.getElementById('aiKeyInput').value = '';
+    document.getElementById('aiKeyModal').classList.remove('hidden');
+    return;
+  }
+  runAIAnalysis();
+}
+
+async function runAIAnalysis() {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const panel = document.getElementById('aiPanel');
+  panel.className = 'ai-panel';
+  panel.classList.remove('hidden');
+  panel.innerHTML = `<div class="ai-loading"><div class="ai-spinner"></div>Analysing with AI…</div>`;
+
+  // Build context
+  const notes = (card.notes||[]).map((n,i)=>`[${formatTs(n.ts)}]${n.isTodo?' [TODO]':''} ${n.text}`).join('\n');
+  const prompt = `You are a business development assistant. Analyse this project/lead card and provide:
+
+1. STATUS SUMMARY: A concise 2-3 sentence summary of where things stand.
+2. NEXT BEST ACTION: The single most important thing to do next.
+3. FOLLOW-UP DRAFT: A short, professional follow-up message (email or WhatsApp style) ready to send.
+4. RISKS & BLOCKERS: Any concerns or red flags from the notes.
+
+Card name: ${card.name}
+Tab/Stage: ${TABS.find(t=>t.id===card.tab)?.label||card.tab}
+Priority: ${card.priority||1}/5
+
+Notes (newest first):
+${notes || '(no notes yet)'}
+
+Respond in this exact format:
+STATUS SUMMARY:
+[your text]
+
+NEXT BEST ACTION:
+[your text]
+
+FOLLOW-UP DRAFT:
+[your text]
+
+RISKS & BLOCKERS:
+[your text]`;
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': getApiKey(), 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
+    });
+    const data = await resp.json();
+    if (data.error) throw new Error(data.error.message);
+    const text = data.content?.[0]?.text || '';
+
+    const sections = [
+      { key: 'STATUS SUMMARY', icon: '📊', label: 'Status Summary' },
+      { key: 'NEXT BEST ACTION', icon: '🎯', label: 'Next Best Action' },
+      { key: 'FOLLOW-UP DRAFT', icon: '✉️', label: 'Follow-up Draft' },
+      { key: 'RISKS & BLOCKERS', icon: '⚠️', label: 'Risks & Blockers' },
+    ];
+
+    let html = `<div class="ai-panel-header"><span class="ai-panel-title">✨ AI Analysis</span><button class="icon-btn" onclick="document.getElementById('aiPanel').classList.add('hidden')" style="color:#7c3aed;">✕</button></div>`;
+    sections.forEach(s => {
+      const re = new RegExp(s.key + ':\s*([\s\S]*?)(?=(?:STATUS SUMMARY|NEXT BEST ACTION|FOLLOW-UP DRAFT|RISKS & BLOCKERS):|$)');
+      const m = text.match(re);
+      const body = m ? m[1].trim() : '—';
+      html += `<div class="ai-section"><div class="ai-section-label">${s.icon} ${s.label}</div><div class="ai-section-body">${escHtml(body)}</div></div>`;
+    });
+    panel.innerHTML = html;
+  } catch(e) {
+    panel.innerHTML = `<div class="ai-panel-header"><span class="ai-panel-title">✨ AI Analysis</span><button class="icon-btn" onclick="document.getElementById('aiPanel').classList.add('hidden')" style="color:#7c3aed;">✕</button></div><div style="color:var(--danger);font-size:13px;">Error: ${escHtml(e.message)}<br><br><button class="btn btn-sm" onclick="localStorage.removeItem('pcmd_api_key');openAIPanel()">Reset API Key</button></div>`;
+  }
+}
+
+// GOOGLE CALENDAR
+let gcalPendingNoteId = null;
+let gcalPendingCardId = null;
+let gcalPendingListId = null;
+
+function openGCalPrompt(noteId) {
+  const card = state.cards[state.currentCardId];
+  if (!card) return;
+  const note = card.notes.find(n => n.id === noteId);
+  if (!note) return;
+  if (gauth.user && gauth.user.email) {
+    gcalPendingNoteId = noteId;
+    gcalPendingCardId = card.id;
+    gcalPendingListId = null;
+    addToGCal();
+    return;
+  }
+  gcalPendingNoteId = noteId;
+  gcalPendingCardId = card.id;
+  showGCalModal(note, card);
+}
+
+function openGCalPromptFromList(cardId, noteId) {
+  const card = state.cards[cardId];
+  if (!card) return;
+  const note = card.notes.find(n => n.id === noteId);
+  if (!note) return;
+  if (gauth.user && gauth.user.email) {
+    gcalPendingNoteId = noteId;
+    gcalPendingCardId = cardId;
+    gcalPendingListId = null;
+    addToGCal();
+    return;
+  }
+  gcalPendingNoteId = noteId;
+  gcalPendingCardId = cardId;
+  showGCalModal(note, card);
+}
+
+function showGCalModal(note, card) {
+  document.getElementById('gcalEvTitle').textContent = note.text || '(No title)';
+  const due = note.dueDate ? new Date(note.dueDate) : null;
+  document.getElementById('gcalEvTime').textContent = due ? '📅 ' + formatDue(due) : 'No date set';
+  document.getElementById('gcalEmailInput').value = '';
+
+  // Load saved accounts
+  const saved = getSavedGCalAccounts();
+  const cont = document.getElementById('gcalSavedAccounts');
+  if (saved.length > 0) {
+    cont.innerHTML = saved.map(a =>
+      `<span class="gcal-account-chip" onclick="selectGCalAccount('${a}')">${a}</span>`
+    ).join('');
+  } else {
+    cont.innerHTML = '<span style="font-size:12px;color:var(--text-dim);">No saved accounts yet</span>';
+  }
+
+  document.getElementById('gcalModal').classList.remove('hidden');
+  setTimeout(() => document.getElementById('gcalEmailInput').focus(), 100);
+}
+
+function selectGCalAccount(email) {
+  document.getElementById('gcalEmailInput').value = email;
+}
+
+function closeGCalModal() {
+  document.getElementById('gcalModal').classList.add('hidden');
+  gcalPendingNoteId = null;
+  gcalPendingCardId = null;
+  gcalPendingListId = null;
+}
+
+function getSavedGCalAccounts() {
+  try { return JSON.parse(localStorage.getItem('pcmd_gcal_accounts') || '[]'); } catch(e) { return []; }
+}
+
+function saveGCalAccount(email) {
+  const saved = getSavedGCalAccounts();
+  if (!saved.includes(email)) {
+    saved.unshift(email);
+    if (saved.length > 5) saved.pop();
+    localStorage.setItem('pcmd_gcal_accounts', JSON.stringify(saved));
+  }
+}
+
+function addToGCal() {
+  const email = (gauth.user && gauth.user.email) || document.getElementById('gcalEmailInput').value.trim();
+  if (!email) { document.getElementById('gcalEmailInput').focus(); return; }
+  saveGCalAccount(email);
+
+  let titleText = '', detailsText = '', dueDateStr = null;
+
+  if (gcalPendingCardId) {
+    const card = state.cards[gcalPendingCardId];
+    if (!card) return;
+    const note = card.notes.find(n => n.id === gcalPendingNoteId);
+    if (!note) return;
+    titleText = note.text || 'To-do';
+    detailsText = 'Project: ' + card.name + '\nTab: ' + (TABS.find(t=>t.id===card.tab)?.label||'');
+    dueDateStr = note.dueDate;
+    // Mark right here while we have the note reference
+    note.addedToCalendar = true;
+    save();
+    if (state.currentCardId === gcalPendingCardId) renderNotes(card);
+    else renderBoard();
+  } else if (gcalPendingListId) {
+    const list = state.todoLists.find(l=>l.id===gcalPendingListId);
+    if (!list) return;
+    const item = list.items.find(i=>i.id===gcalPendingNoteId || i.srcItemId===gcalPendingNoteId);
+    if (!item) return;
+    titleText = item.text || 'To-do';
+    detailsText = 'List: ' + list.title;
+    dueDateStr = item.dueDate;
+    // Mark right here while we have the item reference
+    item.addedToCalendar = true;
+    save();
+    renderBoard();
+  }
+
+  const title = encodeURIComponent(titleText.substring(0, 100));
+  const details = encodeURIComponent(detailsText);
+  let dateParam = '';
+  if (dueDateStr) {
+    const d = new Date(dueDateStr);
+    const pad = n => String(n).padStart(2,'0');
+    const fmt = d2 => d2.getFullYear() + pad(d2.getMonth()+1) + pad(d2.getDate()) + 'T' + pad(d2.getHours()) + pad(d2.getMinutes()) + '00';
+    const end = new Date(d.getTime() + 60*60*1000);
+    dateParam = '&dates=' + fmt(d) + '/' + fmt(end);
+  }
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}${dateParam}&authuser=${encodeURIComponent(email)}`;
+  window.open(url, '_blank');
+  closeGCalModal();
+}
+
+document.getElementById('gcalModal').addEventListener('click', function(e) {
+  if (e.target === this) closeGCalModal();
+});
+
+// DRAG AND DROP
+let dragSrcId = null;
+
+function onDragStart(e) {
+  dragSrcId = this.getAttribute('data-id');
+  this.style.opacity = '0.45';
+  this.style.transform = 'scale(0.97)';
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', dragSrcId);
+}
+
+function onDragEnd(e) {
+  this.style.opacity = '';
+  this.style.transform = '';
+  document.querySelectorAll('.project-card').forEach(c => {
+    c.classList.remove('drag-over');
+    c.style.borderColor = '';
+  });
+}
+
+function onDragOver(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  const targetId = this.getAttribute('data-id');
+  if (targetId && targetId !== dragSrcId) {
+    this.style.borderColor = 'var(--accent)';
+    this.style.borderStyle = 'dashed';
+  }
+  return false;
+}
+
+function onDragLeave(e) {
+  this.style.borderColor = '';
+  this.style.borderStyle = '';
+}
+
+function onDrop(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  const targetId = this.getAttribute('data-id');
+  if (!targetId || targetId === dragSrcId) return;
+
+  const src = state.cards[dragSrcId];
+  const tgt = state.cards[targetId];
+  if (!src || !tgt) return;
+
+  // Only allow reorder within same priority
+  if (src.priority !== tgt.priority) {
+    this.style.borderColor = '';
+    this.style.borderStyle = '';
+    // Show brief red flash
+    this.style.borderColor = 'var(--danger)';
+    setTimeout(() => { this.style.borderColor = ''; this.style.borderStyle = ''; }, 600);
+    return;
+  }
+
+  // Swap sortOrders
+  const tmpOrder = src.sortOrder;
+  src.sortOrder = tgt.sortOrder;
+  tgt.sortOrder = tmpOrder;
+  save();
+  renderBoard();
+  return false;
+}
+
+// ── GOOGLE AUTH & SYNC ───────────────────────────────────────────────────────
+const CLIENT_ID = '397599346928-lv8fi999tg7n47a5e28jev9k5jfgd6um.apps.googleusercontent.com';
+const SYNC_URL = 'https://script.google.com/macros/s/AKfycbyUrNl88BhGzlXUkgtH39pf4xXtHrrPlLeDwGv23vRB_VFrJJNN7Sn8aTagIRIXddk/exec';
+const OWNER_KEY = 'pcmd_owner_email';
+
+let gauth = { user: null, ready: false };
+let syncTimeout = null;
+
+function initGoogleAuth() {
+  google.accounts.id.initialize({
+    client_id: CLIENT_ID,
+    callback: onGoogleSignIn,
+    auto_select: false,
+  });
+  google.accounts.id.renderButton(
+    document.getElementById('googleSignInBtn'),
+    { theme: 'outline', size: 'large', text: 'signin_with', width: 280 }
+  );
+  // Auto sign-in if previously signed in
+  const savedUser = localStorage.getItem('pcmd_guser');
+  if (savedUser) {
+    gauth.user = JSON.parse(savedUser);
+    onAuthReady();
+  }
+}
+
+function onGoogleSignIn(response) {
+  const payload = parseJwt(response.credential);
+  gauth.user = { name: payload.name, email: payload.email, picture: payload.picture };
+  localStorage.setItem('pcmd_guser', JSON.stringify(gauth.user));
+  onAuthReady();
+}
+
+function onAuthReady() {
+  const user = gauth.user;
+  if (!user) return;
+  document.getElementById('userBar').style.display = 'flex';
+  document.getElementById('userName').textContent = user.name.split(' ')[0];
+  document.getElementById('userInitials').textContent = user.name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
+  if (!localStorage.getItem(OWNER_KEY)) {
+    localStorage.setItem(OWNER_KEY, user.email);
+  }
+  gauth.ready = true;
+  document.getElementById('authScreen').classList.add('hidden');
+  loadFromDrive().then(() => {
+    fixVerifiabelSpelling();
+    ensureTodaysList();
+    renderTabs();
+    updateMobileNav(state.activeTab);
+    renderBoard();
+    startBackgroundSync();
+  });
+}
+
+let backgroundSyncInterval = null;
+let lastSyncData = null;
+
+function startBackgroundSync() {
+  if (backgroundSyncInterval) clearInterval(backgroundSyncInterval);
+  // Poll every 45 seconds
+  backgroundSyncInterval = setInterval(async () => {
+    // Don't poll if user is actively saving right now
+    if (isSaving) return;
+    try {
+      const resp = await fetch(SYNC_URL, { method: 'GET', redirect: 'follow' });
+      if (!resp.ok) return;
+      const text = await resp.text();
+      if (!text || text === lastSyncData) return; // no change
+      const parsed = JSON.parse(text);
+      if (!parsed.cards) return;
+      // Check if data actually changed
+      const newHash = JSON.stringify(parsed.cards).length + JSON.stringify(parsed.todoLists).length;
+      const oldHash = JSON.stringify(state.cards).length + JSON.stringify(state.todoLists).length;
+      if (newHash !== oldHash) {
+        lastSyncData = text;
+        state.cards = parsed.cards;
+        if (parsed.todoLists) state.todoLists = parsed.todoLists;
+        if (parsed.ownerEmail) localStorage.setItem(OWNER_KEY, parsed.ownerEmail);
+        _localSave();
+        // Only re-render if no modal is open
+        const modalOpen = !document.getElementById('cardModal').classList.contains('hidden');
+        if (!modalOpen) {
+          fixVerifiabelSpelling();
+          ensureTodaysList();
+          renderBoard();
+          setSyncStatus('ok', '↻ Updated');
+          setTimeout(() => setSyncStatus('ok', 'Synced'), 2000);
+        }
+      }
+    } catch(e) {
+      // Silent fail — don't interrupt user
+    }
+  }, 20000);
+}
+
+function isOwner() {
+  if (!gauth.user) return false;
+  return gauth.user.email === 'arun.aikantika@gmail.com';
+}
+
+function parseJwt(token) {
+  const base64 = token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/');
+  return JSON.parse(atob(base64));
+}
+
+// ── APPS SCRIPT SYNC ─────────────────────────────────────────────────────────
+async function loadFromDrive() {
+  setSyncStatus('syncing', 'Loading…');
+  try {
+    const resp = await fetch(SYNC_URL, { method: 'GET', redirect: 'follow' });
+    if (!resp.ok) { setSyncStatus('error', 'Load failed'); load(); return; }
+    const text = await resp.text();
+    if (!text || text.trim() === '' || text.trim() === '{}') {
+      load();
+      setSyncStatus('ok', 'Synced');
+      return;
+    }
+    const parsed = JSON.parse(text);
+    if (parsed.cards && Object.keys(parsed.cards).length > 0) {
+      state.cards = parsed.cards;
+      state.todoLists = parsed.todoLists || initDefaultTodoLists();
+      save();
+    } else {
+      load();
+    }
+    setSyncStatus('ok', 'Synced');
+  } catch(e) {
+    load();
+    setSyncStatus('error', 'Offline');
+  }
+}
+
+let isSaving = false;
+async function saveToDrive() {
+  if (!gauth.ready) return;
+  if (isSaving) return; // prevent concurrent saves
+  isSaving = true;
+  setSyncStatus('syncing', 'Saving…');
+  try {
+    // Pull latest from Drive first, merge changes, then save
+    // This prevents last-write-wins overwriting other users' changes
+    let baseData = { cards: {}, todoLists: state.todoLists };
+    try {
+      const pullResp = await fetch(SYNC_URL, { method: 'GET', redirect: 'follow' });
+      if (pullResp.ok) {
+        const text = await pullResp.text();
+        if (text && text.trim() !== '{}') {
+          const remote = JSON.parse(text);
+          if (remote.cards) {
+            baseData.cards = remote.cards;
+            // Always keep local todoLists — they are personal/owner only
+            // Never restore from remote to avoid deleted items coming back
+            baseData.todoLists = state.todoLists;
+          }
+        }
+      }
+    } catch(e) {}
+
+    // Merge: combine remote cards with local cards
+    // Local changes take priority for cards we've touched, remote wins for others
+    const mergedCards = { ...baseData.cards };
+    Object.keys(state.cards).forEach(id => {
+      const localCard = state.cards[id];
+      const remoteCard = baseData.cards[id];
+      if (!remoteCard) {
+        // New card added locally
+        mergedCards[id] = localCard;
+      } else {
+        // Merge notes: combine both sets, deduplicate by id
+        // Skip notes that were intentionally deleted
+        const remoteNotes = remoteCard.notes || [];
+        const localNotes = localCard.notes || [];
+        const noteMap = {};
+        remoteNotes.forEach(n => {
+          if (!state.deletedNoteIds.includes(n.id)) noteMap[n.id] = n;
+        });
+        localNotes.forEach(n => noteMap[n.id] = n); // local wins on conflict
+        mergedCards[id] = { ...remoteCard, ...localCard, notes: Object.values(noteMap)
+          .sort((a,b) => new Date(b.ts) - new Date(a.ts)) };
+      }
+    });
+
+    // Keep remote cards that were deleted locally only if they have notes from others
+    Object.keys(baseData.cards).forEach(id => {
+      if (!state.cards[id] && baseData.cards[id]) {
+        const hasOtherNotes = (baseData.cards[id].notes||[]).some(n => n.authorEmail && n.authorEmail !== (gauth.user?.email));
+        if (hasOtherNotes) mergedCards[id] = baseData.cards[id];
+      }
+    });
+
+    // Update local state with merged data
+    state.cards = mergedCards;
+    // Also filter todoList items that were deleted
+    if (state.todoLists) {
+      state.todoLists.forEach(list => {
+        if (!list.locked && list.items) {
+          list.items = list.items.filter(i => !state.deletedNoteIds.includes(i.id));
+        }
+      });
+    }
+    _localSave();
+
+    const body = JSON.stringify({ cards: mergedCards, todoLists: state.todoLists, deletedNoteIds: state.deletedNoteIds, ownerEmail: localStorage.getItem(OWNER_KEY) });
+    const resp = await fetch(SYNC_URL, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain' },
+      body
+    });
+    if (resp.ok) {
+      setSyncStatus('ok', 'Synced ✓');
+      setTimeout(() => setSyncStatus('ok', 'Synced'), 2000);
+    } else {
+      setSyncStatus('error', 'Failed');
+    }
+  } catch(e) {
+    setSyncStatus('error', 'Offline');
+  } finally {
+    isSaving = false;
+  }
+}
+
+function syncNow() { saveToDrive(); }
+
+function setSyncStatus(status, label) {
+  const ind = document.getElementById('syncIndicator');
+  const lbl = document.getElementById('syncLabel');
+  if (!ind || !lbl) return;
+  lbl.textContent = label;
+  ind.className = 'sync-indicator' + (status === 'syncing' ? ' syncing' : status === 'error' ? ' error' : '');
+  let dot = document.getElementById('syncDot');
+  if (status === 'syncing') {
+    if (dot && dot.className !== 'sync-spinner') dot.outerHTML = '<span class="sync-spinner" id="syncDot"></span>';
+  } else {
+    dot = document.getElementById('syncDot');
+    if (dot && dot.className === 'sync-spinner') dot.outerHTML = '<span class="sync-dot" id="syncDot"></span>';
+  }
+}
+
+function signOut() {
+  google.accounts.id.disableAutoSelect();
+  localStorage.removeItem('pcmd_guser');
+  gauth = { user: null, ready: false };
+  document.getElementById('userBar').style.display = 'none';
+  document.getElementById('authScreen').classList.remove('hidden');
+}
+
+// ── SAVE: local + Drive (debounced 1s) ───────────────────────────────────────
+const _localSave = function() {
+  const toSave = { cards: state.cards, todoLists: state.todoLists, deletedNoteIds: state.deletedNoteIds };
+  try { localStorage.setItem('pcmd_v2', JSON.stringify(toSave)); } catch(e) {}
+};
+
+function save() {
+  _localSave();
+  clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(() => { saveToDrive(); }, 1000);
+}
+
+// ── ACCESS CONTROL ────────────────────────────────────────────────────────────
+const _origRenderTabs = renderTabs;
+window.renderTabs = function() {
+  const bar = document.getElementById('tabsBar');
+  bar.innerHTML = TABS.map(t => `
+    <button class="tab-btn ${state.activeTab===t.id?'active':''}" onclick="switchTab('${t.id}')">${t.label}</button>
+  `).join('');
+};
+
+const _origUpdateMobileNav = updateMobileNav;
+window.updateMobileNav = function(id) {
+  document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('mnav_' + id);
+  if (btn) btn.classList.add('active');
+};
+
+// ── INIT WITH AUTH ────────────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  const waitForGoogle = setInterval(() => {
+    if (window.google && window.google.accounts) {
+      clearInterval(waitForGoogle);
+      initGoogleAuth();
+    }
+  }, 100);
+  setTimeout(() => {
+    clearInterval(waitForGoogle);
+    if (!gauth.ready) {
+      document.getElementById('authScreen').classList.add('hidden');
+      init();
+    }
+  }, 5000);
+});
+
+// ── DEBUG ─────────────────────────────────────────────────────────────────────
+function showDebug() {
+  const info = {
+    signedIn: !!gauth.user,
+    email: gauth.user?.email || 'none',
+    tokenPresent: !!gauth.token,
+    ready: gauth.ready,
+    fileId: gauth.fileId || 'none',
+    ownerEmail: localStorage.getItem('pcmd_owner_email') || 'not set',
+    isOwner: gauth.user?.email === localStorage.getItem('pcmd_owner_email'),
+    cardCount: Object.keys(state.cards).length,
+    todoListCount: state.todoLists?.length || 0,
+    syncLabel: document.getElementById('syncLabel')?.textContent
+  };
+  document.getElementById('debugOutput').textContent = JSON.stringify(info, null, 2);
+  document.getElementById('debugModal').classList.remove('hidden');
+}
+
+async function debugForceLoad() {
+  document.getElementById('debugOutput').textContent = 'Loading from Drive...';
+  await loadFromDrive();
+  fixVerifiabelSpelling();
+  ensureTodaysList();
+  document.getElementById('debugModal').classList.add('hidden');
+  renderBoard();
+}
+
+function debugSetOwner() {
+  if (!gauth.user?.email) {
+    document.getElementById('debugOutput').textContent = 'Not signed in yet';
+    return;
+  }
+  localStorage.setItem('pcmd_owner_email', gauth.user.email);
+  document.getElementById('debugOutput').textContent = 'Owner set to: ' + gauth.user.email + '\nReloading...';
+  setTimeout(() => location.reload(), 1000);
+}
+
+function debugClearAll() {
+  localStorage.clear();
+  location.reload();
+}
+
+</script>
+</body>
+</html>
